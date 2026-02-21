@@ -4,10 +4,14 @@
     {% include head.html %}
   </head>
   <body>
-    {% include header.html %}
-    <main class="container" id="main-content">
-      {{ content }}
-    </main>
-    {% include footer.html %}
+    <div class="page-wrapper">
+      {% include header.html %}
+      <main class="container" id="main-content">
+        {{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+    {% include abstract_modal.html %}
+    <script src="{{ '/assets/js/abstract-modal.js' | relative_url }}" defer></script>
   </body>
 </html>

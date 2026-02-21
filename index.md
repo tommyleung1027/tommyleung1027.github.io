@@ -77,6 +77,18 @@ title: Home
       {% if item.slides %}
       <p class="inline-links compact-line"><a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label }}</a></p>
       {% endif %}
+      <p class="compact-line">
+        <button
+          class="abstract-button js-view-abstract"
+          type="button"
+          data-paper-id="{{ item.paper_id | escape }}"
+          data-title="{{ item.title | escape }}"
+          data-abstract="{{ item.abstract | default: 'Abstract unavailable. Please see SSRN page.' | escape }}"
+          data-url="{{ item.url | escape }}"
+        >
+          View Abstract
+        </button>
+      </p>
     </article>
     {% endfor %}
   </div>

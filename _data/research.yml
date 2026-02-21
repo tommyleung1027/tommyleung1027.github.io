@@ -1,221 +1,230 @@
 working_papers:
-  - title: "How AI Reshapes Human Content Creation: The Case of Wikipedia"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5853062"
-    month: "Jan"
-    year: 2026
-    links:
-      - label: "Under Review"
-    coauthors:
-      - name: "Koleman Strumpf"
-        url: "https://users.wfu.edu/strumpks/"
-    slides:
-      label: "AI-generated slides"
-      url: "/slides/Grokipedia_slides_NotebookLM.pdf"
-    featured: true
-  - title: "#EconTwitter and Elon Musk: Anatomy of a Failed Exodus"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585"
-    month: "Dec"
-    year: 2025
-    links:
-      - label: "Under Review"
-    coauthors:
-      - name: "Kwok Ping Tsang"
-        url: "https://sites.google.com/site/byrontkp/"
-    slides:
-      label: "AI-generated slides"
-      url: "/slides/Twitter_AI_slides.pdf"
-    featured: true
-  - title: "An Empirical Decomposition of Information vs Sentiment Shifts in Advertising"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5297093"
-    month: "Jun"
-    year: 2025
-    coauthors:
-      - name: "Shi Qi"
-        url: "https://sites.google.com/site/shiqiecon/Home"
-      - name: "Koleman Strumpf"
-        url: "https://users.wfu.edu/strumpks/"
-    featured: true
-  - title: "Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469"
-    month: "May"
-    year: 2025
-    coauthors:
-      - name: "Koleman Strumpf"
-        url: "https://users.wfu.edu/strumpks/"
-    links:
-      - label: "CESifo Working Paper No. 10890"
-        url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294"
-      - label: "R&R"
-    slides:
-      label: "Slides"
-      url: "/slides/slides_NASM2024.pdf"
-    mentions:
-      - label: "Marginal Revolution"
-        url: "https://marginalrevolution.com/marginalrevolution/2024/02/new-data-on-media-bias.html"
-      - label: "The Conversation"
-        url: "https://theconversation.com/is-news-bias-fueled-by-journalists-supplying-slanted-views-or-readers-demanding-them-an-economist-weighs-in-236769"
-      - label: "WFU News"
-        url: "https://news.wfu.edu/2024/07/17/disentangling-media-bias/"
-      - label: "WFDD"
-        url: "https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias"
-    featured: true
-  - title: "Quantifying Racial Prejudices with Housing Transaction Data"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4249510"
-    month: "Sep"
-    year: 2024
-    coauthors:
-      - name: "Xiaojin (Aaron) Sun"
-        url: "https://sites.google.com/a/vt.edu/aaronsun/"
-      - name: "Kwok Ping Tsang"
-        url: "https://sites.google.com/site/byrontkp/"
-    mentions:
-      - label: "New York Times"
-        url: "https://www.nytimes.com/2023/06/07/opinion/suburbs-politics-integration.html?smid=nytcore-android-share"
-  - title: "All the Headlines that Are Fit to Change"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4075398"
-    month: "Mar"
-    year: 2023
-    coauthors:
-      - name: "Koleman Strumpf"
-        url: "http://users.wfu.edu/strumpks/"
-    slides:
-      label: "Slides"
-      url: "https://drive.google.com/file/d/1vbpr66Zt-U5r31AvZfVHFAS4HI25j7m5/view?usp=sharing"
-    mentions:
-      - label: "U Penn Law School Economics of Digital Service Blog"
-        url: "https://www.law.upenn.edu/live/blogs/129-all-the-headlines-that-are-fit-to-change-2022"
-
+- title: 'How AI Reshapes Human Content Creation: The Case of Wikipedia'
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5853062
+  month: Jan
+  year: 2026
+  links:
+  - label: Under Review
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
+  slides:
+    label: AI-generated slides
+    url: /slides/Grokipedia_slides_NotebookLM.pdf
+  featured: true
+  paper_id: ssrn-5853062
+  abstract: Abstract unavailable. Please see SSRN page.
+- title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585
+  month: Dec
+  year: 2025
+  links:
+  - label: Under Review
+  coauthors:
+  - name: Kwok Ping Tsang
+    url: https://sites.google.com/site/byrontkp/
+  slides:
+    label: AI-generated slides
+    url: /slides/Twitter_AI_slides.pdf
+  featured: true
+  paper_id: ssrn-5923585
+  abstract: Abstract unavailable. Please see SSRN page.
+- title: An Empirical Decomposition of Information vs Sentiment Shifts in Advertising
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5297093
+  month: Jun
+  year: 2025
+  coauthors:
+  - name: Shi Qi
+    url: https://sites.google.com/site/shiqiecon/Home
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
+  featured: true
+  paper_id: ssrn-5297093
+  abstract: Abstract unavailable. Please see SSRN page.
+- title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
+  month: May
+  year: 2025
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
+  links:
+  - label: CESifo Working Paper No. 10890
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294
+  - label: R&R
+  slides:
+    label: Slides
+    url: /slides/slides_NASM2024.pdf
+  mentions:
+  - label: Marginal Revolution
+    url: https://marginalrevolution.com/marginalrevolution/2024/02/new-data-on-media-bias.html
+  - label: The Conversation
+    url: https://theconversation.com/is-news-bias-fueled-by-journalists-supplying-slanted-views-or-readers-demanding-them-an-economist-weighs-in-236769
+  - label: WFU News
+    url: https://news.wfu.edu/2024/07/17/disentangling-media-bias/
+  - label: WFDD
+    url: https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias
+  featured: true
+  paper_id: ssrn-4968469
+  abstract: Abstract unavailable. Please see SSRN page.
+- title: Quantifying Racial Prejudices with Housing Transaction Data
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4249510
+  month: Sep
+  year: 2024
+  coauthors:
+  - name: Xiaojin (Aaron) Sun
+    url: https://sites.google.com/a/vt.edu/aaronsun/
+  - name: Kwok Ping Tsang
+    url: https://sites.google.com/site/byrontkp/
+  mentions:
+  - label: New York Times
+    url: https://www.nytimes.com/2023/06/07/opinion/suburbs-politics-integration.html?smid=nytcore-android-share
+  paper_id: ssrn-4249510
+  abstract: Abstract unavailable. Please see SSRN page.
+- title: All the Headlines that Are Fit to Change
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4075398
+  month: Mar
+  year: 2023
+  coauthors:
+  - name: Koleman Strumpf
+    url: http://users.wfu.edu/strumpks/
+  slides:
+    label: Slides
+    url: https://drive.google.com/file/d/1vbpr66Zt-U5r31AvZfVHFAS4HI25j7m5/view?usp=sharing
+  mentions:
+  - label: U Penn Law School Economics of Digital Service Blog
+    url: https://www.law.upenn.edu/live/blogs/129-all-the-headlines-that-are-fit-to-change-2022
+  paper_id: ssrn-4075398
+  abstract: Abstract unavailable. Please see SSRN page.
 work_in_progress:
-  - "Social Network Addiction, with Koleman Strumpf and Tsz-Nga Wong"
-  - "Dissecting Netflix's Self-Preferencing: Evidence from Viewer-Level Data, with Shi Qi and Koleman Strumpf"
-
+- Social Network Addiction, with Koleman Strumpf and Tsz-Nga Wong
+- 'Dissecting Netflix''s Self-Preferencing: Evidence from Viewer-Level Data, with Shi Qi and Koleman Strumpf'
 publications:
-  - citation: "Leung, T.C., and S. Qi (2023): \"Globalization and the Rise of Action Movies in Hollywood,\" Journal of Cultural Economics, 47, pp. 31-69."
-    links:
-      - label: "Journal"
-        url: "https://doi.org/10.1007/s10824-021-09438-z"
-      - label: "Working paper version"
-        url: "https://drive.google.com/open?id=1LpAJ1GVa1vlpN99iKu91R-ZbhvtDpjOz"
-      - label: "Featured in EconomistTalkArt.org"
-        url: "https://culturaleconomics.org/globalization-and-the-rise-of-action-movies-in-hollywood/"
-  - citation: "Leung, T.C., K.P. Tsang, and K. K. Tsui (2022): \"Collusion in Private Procurement: How Does Mandatory Building Inspection Increase Renovation Prices?\" Singapore Economic Review, 67(5), pp. 1759-1779."
-    links:
-      - label: "Journal"
-        url: "https://www.worldscientific.com/doi/10.1142/S0217590822430020"
-      - label: "Working paper version"
-        url: "https://drive.google.com/file/d/1EJqYbqIqD3cBXwaHBimB1M60sRF9wTOg/view?usp=sharing"
-      - label: "BBC (Chinese)"
-        url: "https://www.bbc.com/zhongwen/articles/cjrj0320pdgo/trad"
-      - label: "New York Times"
-        url: "https://www.nytimes.com/2025/12/26/world/asia/hong-kong-apartment-fire-corruption.html"
-  - citation: "Kim, J.H., and T.C. Leung (2021): \"Eliminating Digital Rights Management in the E-Book Market,\" Information Economics and Policy, 57."
-    links:
-      - label: "Journal"
-        url: "https://doi.org/10.1016/j.infoecopol.2021.100935"
-  - citation: "Leung, T.C., K.P. Tsang, and K. K. Tsui (2020): \"Why Are Inferior Seats \"Underpriced\"? Evidence from the English Premier League,\" Man and the Economy, (7) 1."
-    links:
-      - label: "Journal"
-        url: "https://www.degruyter.com/view/journals/me/7/1/article-20200007.xml"
-      - label: "Working paper version"
-        url: "https://drive.google.com/file/d/1vz5P5aoUSl15z6739FoRxsfqDAMHG88A/view"
-  - citation: "Leung, T.C., S. Qi, and J. Yuan (2020): \"Movie Industry Demand and Theater Availability,\" Review of Industrial Organization, 56, pp. 489-513."
-    links:
-      - label: "Journal"
-        url: "http://link.springer.com/article/10.1007/s11151-019-09706-5"
-      - label: "Working paper version"
-        url: "https://drive.google.com/file/d/1OBiz9ZTIRuJNaO4X5SQdgcz-CUA72H9u/view?usp=sharing"
-  - citation: "Leung, T.C., K.P. Tsang, and K. K. Tsui (2019): \"What Can Regulators Deregulate? The Case of Electricity,\" Journal of Regulatory Economics, 56(1), pp. 1-32 (lead article)."
-    links:
-      - label: "Journal"
-        url: "https://link.springer.com/article/10.1007/s11149-019-09386-9"
-      - label: "Working paper version"
-        url: "https://drive.google.com/file/d/1t-ZUS1monDYdKV3lo5aRW7ezaC1HY4jU/view?usp=sharing"
-  - citation: "Kim, J.H., T.C. Leung, L. Wagman (2017): \"Can Restricting Property Use Be Value Enhancing? Evidence from Short-Term Rental Regulations,\" Journal of Law & Economics, 60(2), pp. 309-334."
-    links:
-      - label: "Journal"
-        url: "http://www.journals.uchicago.edu/doi/pdfplus/10.1086/694415"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/LK8a.pdf"
-  - citation: "Chao, H., C.Y. Ho, T.C. Leung, and Travis Ng (2017): \"To Root or Not to Root? The Economics of Jailbreak,\" Journal of Comparative Economics, 45(3), pp. 481-497."
-    links:
-      - label: "Journal"
-        url: "http://www.sciencedirect.com/science/article/pii/S0147596716300397"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/CHLN1_edited.pdf"
-  - citation: "Dalton J.T. and T.C. Leung (2017): \"Strategic Decision-Making in Hollywood Release Gaps,\" Journal of International Economics, 105, pp. 10-21."
-    links:
-      - label: "Journal"
-        url: "http://www.sciencedirect.com/science/article/pii/S0022199616301465"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/ReleaseGaps.pdf"
-  - citation: "Leung, C.K.Y., T.C. Leung, and K.P. Tsang (2015): \"Tax-driven Bunching of Housing Market Transactions: The Case of Hong Kong,\" International Real Estate Review, 18(4), pp. 473-501."
-  - citation: "Dalton J.T. and T.C. Leung (2015): \"Dispersion and Distortions in the Trans-Atlantic Slave Trade,\" Journal of International Economics, 96(2), pp. 412-425."
-    links:
-      - label: "Journal"
-        url: "http://authors.elsevier.com/sd/article/S0022199615000562"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/SlaveDistribution.pdf"
-  - citation: "Leung, T.C. (2015): \"Music Piracy: Bad for Record Sales but Good for the iPod?\" Information Economics and Policy, 31, pp. 1-12 (lead article)."
-    links:
-      - label: "Journal"
-        url: "http://www.sciencedirect.com/science/article/pii/S0167624515000116"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/iPod_revised.pdf"
-  - citation: "Dalton J.T. and T.C. Leung (2014): \"Why is Polygyny More Prevalent in Western Africa? An African Slave Trade Perspective,\" Economic Development and Cultural Change, 62(4), pp.599-632 (lead article)."
-    links:
-      - label: "Journal"
-        url: "http://www.jstor.org/stable/10.1086/676531"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/SlavePolygyny.pdf"
-      - label: "Featured in Foreign Policy Magazine"
-        url: "https://foreignpolicy.com/2014/09/04/is-polygyny-a-slave-to-history/"
-      - label: "Featured PDF"
-        url: "http://sites.google.com/site/tincheuk/IsPolygynyaSlavetoHistory_.pdf"
-  - citation: "Leung, T.C. (2013): \"What is the True Loss Due to Piracy? Evidence from Microsoft Office in Hong Kong,\" Review of Economics and Statistics, 95(3), pp.1015-1029."
-    links:
-      - label: "Journal"
-        url: "http://www.mitpressjournals.org/doi/abs/10.1162/REST_a_00290"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/Software_revised_2nd.pdf"
-      - label: "Online Appendix"
-        url: "http://sites.google.com/site/tincheuk/research/Appendix.pdf"
-  - citation: "Leung, T.C. and K.P. Tsang (2013): \"Anchoring and Loss Aversion in the Housing Market: Implications on Price Dynamics,\" China Economic Review, 24, pp.42-54."
-    links:
-      - label: "Journal"
-        url: "http://www.sciencedirect.com/science/article/pii/S1043951X12001149"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/LT2.pdf"
-  - citation: "Leung, T.C. and K.P. Tsang (2013): \"Can Anchoring and Loss Aversion Explain the Predictability of Housing Prices?\" Pacific Economic Review, 18(1), pp.41-59."
-    links:
-      - label: "Journal"
-        url: "http://onlinelibrary.wiley.com/doi/10.1111/1468-0106.12009/abstract"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/LT3.pdf"
-  - citation: "Leung, T.C. and K.P. Tsang (2012): \"Love Thy Neighbor: Income Distribution and Housing Preferences,\" Journal of Housing Economics, 21(4), pp.322-335."
-    links:
-      - label: "Journal"
-        url: "http://www.sciencedirect.com/science/article/pii/S105113771200054X"
-      - label: "Working paper version"
-        url: "http://sites.google.com/site/tincheuk/research/LT1.pdf"
-
+- citation: 'Leung, T.C., and S. Qi (2023): "Globalization and the Rise of Action Movies in Hollywood," Journal of Cultural Economics, 47, pp. 31-69.'
+  links:
+  - label: Journal
+    url: https://doi.org/10.1007/s10824-021-09438-z
+  - label: Working paper version
+    url: https://drive.google.com/open?id=1LpAJ1GVa1vlpN99iKu91R-ZbhvtDpjOz
+  - label: Featured in EconomistTalkArt.org
+    url: https://culturaleconomics.org/globalization-and-the-rise-of-action-movies-in-hollywood/
+- citation: 'Leung, T.C., K.P. Tsang, and K. K. Tsui (2022): "Collusion in Private Procurement: How Does Mandatory Building Inspection Increase Renovation Prices?" Singapore Economic Review, 67(5), pp. 1759-1779.'
+  links:
+  - label: Journal
+    url: https://www.worldscientific.com/doi/10.1142/S0217590822430020
+  - label: Working paper version
+    url: https://drive.google.com/file/d/1EJqYbqIqD3cBXwaHBimB1M60sRF9wTOg/view?usp=sharing
+  - label: BBC (Chinese)
+    url: https://www.bbc.com/zhongwen/articles/cjrj0320pdgo/trad
+  - label: New York Times
+    url: https://www.nytimes.com/2025/12/26/world/asia/hong-kong-apartment-fire-corruption.html
+- citation: 'Kim, J.H., and T.C. Leung (2021): "Eliminating Digital Rights Management in the E-Book Market," Information Economics and Policy, 57.'
+  links:
+  - label: Journal
+    url: https://doi.org/10.1016/j.infoecopol.2021.100935
+- citation: 'Leung, T.C., K.P. Tsang, and K. K. Tsui (2020): "Why Are Inferior Seats "Underpriced"? Evidence from the English Premier League," Man and the Economy, (7) 1.'
+  links:
+  - label: Journal
+    url: https://www.degruyter.com/view/journals/me/7/1/article-20200007.xml
+  - label: Working paper version
+    url: https://drive.google.com/file/d/1vz5P5aoUSl15z6739FoRxsfqDAMHG88A/view
+- citation: 'Leung, T.C., S. Qi, and J. Yuan (2020): "Movie Industry Demand and Theater Availability," Review of Industrial Organization, 56, pp. 489-513.'
+  links:
+  - label: Journal
+    url: http://link.springer.com/article/10.1007/s11151-019-09706-5
+  - label: Working paper version
+    url: https://drive.google.com/file/d/1OBiz9ZTIRuJNaO4X5SQdgcz-CUA72H9u/view?usp=sharing
+- citation: 'Leung, T.C., K.P. Tsang, and K. K. Tsui (2019): "What Can Regulators Deregulate? The Case of Electricity," Journal of Regulatory Economics, 56(1), pp. 1-32 (lead article).'
+  links:
+  - label: Journal
+    url: https://link.springer.com/article/10.1007/s11149-019-09386-9
+  - label: Working paper version
+    url: https://drive.google.com/file/d/1t-ZUS1monDYdKV3lo5aRW7ezaC1HY4jU/view?usp=sharing
+- citation: 'Kim, J.H., T.C. Leung, L. Wagman (2017): "Can Restricting Property Use Be Value Enhancing? Evidence from Short-Term Rental Regulations," Journal of Law & Economics, 60(2), pp. 309-334.'
+  links:
+  - label: Journal
+    url: http://www.journals.uchicago.edu/doi/pdfplus/10.1086/694415
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/LK8a.pdf
+- citation: 'Chao, H., C.Y. Ho, T.C. Leung, and Travis Ng (2017): "To Root or Not to Root? The Economics of Jailbreak," Journal of Comparative Economics, 45(3), pp. 481-497.'
+  links:
+  - label: Journal
+    url: http://www.sciencedirect.com/science/article/pii/S0147596716300397
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/CHLN1_edited.pdf
+- citation: 'Dalton J.T. and T.C. Leung (2017): "Strategic Decision-Making in Hollywood Release Gaps," Journal of International Economics, 105, pp. 10-21.'
+  links:
+  - label: Journal
+    url: http://www.sciencedirect.com/science/article/pii/S0022199616301465
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/ReleaseGaps.pdf
+- citation: 'Leung, C.K.Y., T.C. Leung, and K.P. Tsang (2015): "Tax-driven Bunching of Housing Market Transactions: The Case of Hong Kong," International Real Estate Review, 18(4), pp. 473-501.'
+- citation: 'Dalton J.T. and T.C. Leung (2015): "Dispersion and Distortions in the Trans-Atlantic Slave Trade," Journal of International Economics, 96(2), pp. 412-425.'
+  links:
+  - label: Journal
+    url: http://authors.elsevier.com/sd/article/S0022199615000562
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/SlaveDistribution.pdf
+- citation: 'Leung, T.C. (2015): "Music Piracy: Bad for Record Sales but Good for the iPod?" Information Economics and Policy, 31, pp. 1-12 (lead article).'
+  links:
+  - label: Journal
+    url: http://www.sciencedirect.com/science/article/pii/S0167624515000116
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/iPod_revised.pdf
+- citation: 'Dalton J.T. and T.C. Leung (2014): "Why is Polygyny More Prevalent in Western Africa? An African Slave Trade Perspective," Economic Development and Cultural Change, 62(4), pp.599-632 (lead article).'
+  links:
+  - label: Journal
+    url: http://www.jstor.org/stable/10.1086/676531
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/SlavePolygyny.pdf
+  - label: Featured in Foreign Policy Magazine
+    url: https://foreignpolicy.com/2014/09/04/is-polygyny-a-slave-to-history/
+  - label: Featured PDF
+    url: http://sites.google.com/site/tincheuk/IsPolygynyaSlavetoHistory_.pdf
+- citation: 'Leung, T.C. (2013): "What is the True Loss Due to Piracy? Evidence from Microsoft Office in Hong Kong," Review of Economics and Statistics, 95(3), pp.1015-1029.'
+  links:
+  - label: Journal
+    url: http://www.mitpressjournals.org/doi/abs/10.1162/REST_a_00290
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/Software_revised_2nd.pdf
+  - label: Online Appendix
+    url: http://sites.google.com/site/tincheuk/research/Appendix.pdf
+- citation: 'Leung, T.C. and K.P. Tsang (2013): "Anchoring and Loss Aversion in the Housing Market: Implications on Price Dynamics," China Economic Review, 24, pp.42-54.'
+  links:
+  - label: Journal
+    url: http://www.sciencedirect.com/science/article/pii/S1043951X12001149
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/LT2.pdf
+- citation: 'Leung, T.C. and K.P. Tsang (2013): "Can Anchoring and Loss Aversion Explain the Predictability of Housing Prices?" Pacific Economic Review, 18(1), pp.41-59.'
+  links:
+  - label: Journal
+    url: http://onlinelibrary.wiley.com/doi/10.1111/1468-0106.12009/abstract
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/LT3.pdf
+- citation: 'Leung, T.C. and K.P. Tsang (2012): "Love Thy Neighbor: Income Distribution and Housing Preferences," Journal of Housing Economics, 21(4), pp.322-335.'
+  links:
+  - label: Journal
+    url: http://www.sciencedirect.com/science/article/pii/S105113771200054X
+  - label: Working paper version
+    url: http://sites.google.com/site/tincheuk/research/LT1.pdf
 other_working_papers:
-  - title: "The Slave Trade and Conflict in Africa, 1400-2000 (Jun 2019, with Levi Boxell and John T. Dalton)"
-    url: "http://users.wfu.edu/daltonjt/SlaveTradeConflict.pdf"
-    coauthors:
-      - name: "Levi Boxell"
-        url: "https://sites.google.com/site/leviboxell/"
-      - name: "John T. Dalton"
-        url: "http://users.wfu.edu/daltonjt/"
-  - title: "Being Bad by Being Good: Owner and Captain Value-Added in the Slave Trade (Mar 2019, with John T. Dalton)"
-    url: "https://drive.google.com/file/d/1tfoHL4FmDpKOAqHUNrdEKQv90lMZlU7f/view?usp=sharing"
-    coauthors:
-      - name: "John T. Dalton"
-        url: "http://www.wfu.edu/~daltonjt/"
-  - title: "Discrimination in the Publishing Industry? (Jan 2022, with Koleman Strumpf)"
-    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3660289"
-    coauthors:
-      - name: "Koleman Strumpf"
-        url: "http://users.wfu.edu/strumpks/"
-    mentions:
-      - label: "Mentioned in The Bookseller"
-        url: "https://www.thebookseller.com/comment/lgbtq-focus-still-here-still-queer-but-getting-squeezed-out"
+- title: The Slave Trade and Conflict in Africa, 1400-2000 (Jun 2019, with Levi Boxell and John T. Dalton)
+  url: http://users.wfu.edu/daltonjt/SlaveTradeConflict.pdf
+  coauthors:
+  - name: Levi Boxell
+    url: https://sites.google.com/site/leviboxell/
+  - name: John T. Dalton
+    url: http://users.wfu.edu/daltonjt/
+- title: 'Being Bad by Being Good: Owner and Captain Value-Added in the Slave Trade (Mar 2019, with John T. Dalton)'
+  url: https://drive.google.com/file/d/1tfoHL4FmDpKOAqHUNrdEKQv90lMZlU7f/view?usp=sharing
+  coauthors:
+  - name: John T. Dalton
+    url: http://www.wfu.edu/~daltonjt/
+- title: Discrimination in the Publishing Industry? (Jan 2022, with Koleman Strumpf)
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3660289
+  coauthors:
+  - name: Koleman Strumpf
+    url: http://users.wfu.edu/strumpks/
+  mentions:
+  - label: Mentioned in The Bookseller
+    url: https://www.thebookseller.com/comment/lgbtq-focus-still-here-still-queer-but-getting-squeezed-out

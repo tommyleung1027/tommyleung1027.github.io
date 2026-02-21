@@ -36,6 +36,16 @@ permalink: /research/
         {% for m in item.mentions %}
           <a class="badge" href="{{ m.url }}" target="_blank" rel="noopener">{{ m.label }}</a>
         {% endfor %}
+        <button
+          class="abstract-button js-view-abstract"
+          type="button"
+          data-paper-id="{{ item.paper_id | escape }}"
+          data-title="{{ item.title | escape }}"
+          data-abstract="{{ item.abstract | default: 'Abstract unavailable. Please see SSRN page.' | escape }}"
+          data-url="{{ item.url | escape }}"
+        >
+          View Abstract
+        </button>
       </p>
     </li>
     {% endfor %}

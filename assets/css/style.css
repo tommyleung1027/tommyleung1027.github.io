@@ -214,6 +214,86 @@ h3 {
   flex-wrap: wrap;
 }
 
+.page-wrapper {
+  transition: filter 0.2s ease;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open .page-wrapper {
+  filter: blur(4px);
+}
+
+.abstract-button {
+  border: 1px solid var(--accent);
+  background: #fff;
+  color: var(--accent);
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.abstract-button:hover,
+.abstract-button:focus {
+  background: #f1f7ff;
+}
+
+.abstract-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 33, 43, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.abstract-modal {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem 1.1rem;
+  position: relative;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+}
+
+.abstract-modal-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.abstract-modal-close:hover,
+.abstract-modal-close:focus {
+  color: var(--text);
+}
+
+.abstract-modal-body {
+  white-space: pre-line;
+  margin-bottom: 0.8rem;
+}
+
+.abstract-modal-link-wrap {
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   .nav-wrap {
     flex-direction: column;
@@ -232,5 +312,10 @@ h3 {
   .cv-frame {
     min-height: 500px;
     height: 68vh;
+  }
+
+  .abstract-modal {
+    max-height: calc(100vh - 1rem);
+    padding: 0.9rem 0.95rem 1rem;
   }
 }
