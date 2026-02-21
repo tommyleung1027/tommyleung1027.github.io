@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="site-title" href="{{ '/' | relative_url }}">Tin Cheuk Leung</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/research/' | relative_url }}" {% if page.url contains '/research/' %}aria-current="page"{% endif %}>Research</a></li>
+        <li><a href="{{ '/cv/' | relative_url }}" {% if page.url contains '/cv/' %}aria-current="page"{% endif %}>CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

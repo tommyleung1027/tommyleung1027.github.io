@@ -1,0 +1,31 @@
+name: "Tin Cheuk Leung (Tommy 梁天卓)"
+role: "Associate Professor"
+department: "Department of Economics, Wake Forest University"
+past_positions:
+  - "Assistant Professor, Department of Economics, Wake Forest University (2016-2020)"
+  - "Assistant Professor, Department of Economics, Chinese University of Hong Kong (2009-2016)"
+research_interests:
+  - "Economics of digitization"
+  - "Economic history of the African slave trade and its effects"
+  - "Economics of housing"
+contact:
+  email: "leungtc@wfu.edu"
+  phone: "(336) 758-3497"
+  office: "Rm 206, 2nd Floor, Kirby Hall"
+  address: "Department of Economics, Kirby Hall, Box 7505, Winston-Salem, NC 27109"
+links:
+  scholar:
+    label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=vZQhjlIAAAAJ&hl=en"
+  twitter:
+    label: "X (Twitter)"
+    url: "https://x.com/tommyleung1027"
+  linkedin:
+    label: "LinkedIn"
+    url: "https://www.linkedin.com/in/tin-cheuk-tommy-leung-83271256?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYbTjTGgbQk21%2B7hL79e0XA%3D%3D"
+  vide:
+    label: "VIDE seminar series"
+    url: "https://www.digitalecon.org/seminar"
+cv:
+  download_url: "https://www.dropbox.com/s/67z9e9xgds1lkuj/LeungCV.pdf?dl=0"
+  embed_url: "https://drive.google.com/file/d/13sPd1cRL2GgcDzupKuxGAkXfzrVdDwVT/preview"

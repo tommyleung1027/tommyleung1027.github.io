@@ -1,0 +1,12 @@
+title: Tin Cheuk Leung
+email: leung@wfu.edu
+description: Academic website of Tin Cheuk Leung (Tommy 梁天卓)
+baseurl: ""
+url: ""
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+collections: {}
+exclude:
+  - README.md
