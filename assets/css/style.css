@@ -185,6 +185,18 @@ h3 {
   text-decoration: none;
 }
 
+.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+}
+
 .cv-frame {
   width: 100%;
   height: 78vh;
@@ -199,6 +211,13 @@ h3 {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.cv-embed iframe,
+.cv-embed embed {
+  width: 100%;
+  height: 85vh;
+  border: none;
 }
 
 .site-footer {
@@ -318,5 +337,12 @@ body.modal-open #page {
     width: min(94vw, 820px);
     max-height: 82vh;
     padding: 0.9rem 0.95rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-embed iframe,
+  .cv-embed embed {
+    height: 75vh;
   }
 }
