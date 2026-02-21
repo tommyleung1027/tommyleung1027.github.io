@@ -13,7 +13,8 @@ working_papers:
     url: /slides/Grokipedia_slides_NotebookLM.pdf
   featured: true
   paper_id: ssrn-5853062
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    Generative AI models rely on large volumes of user-generated content (UGC), yet we know little about how AI tools affect the production of that underlying content. We study this question by examining the short-run impact of the introduction of Grokipedia, an AI-generated online encyclopedia operated by xAI, which provides automated entries that could either substitute for human editing or draw in new contributors. We develop a simple theoretical framework in which AI entries can redirect user attention and stimulate human editing through novel framing, yielding ambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million Wikipedia pages of notable individuals, we exploit the fact that only a subset have comparable Grokipedia entries to estimate the causal effect of AI on subsequent human contributions, constructing matched samples of treated and untreated pages within occupational fields. We find a consistent and surprising result: the availability of Grokipedia increases human editing activity. Page views also rise, suggesting that AI entries act as an attention amplifier rather than a pure substitute for Wikipedia content. Exploiting variation in the semantic similarity between Grokipedia entries and their corresponding Wikipedia articles, we further show that pages with lower similarity experience larger increases in editing after Grokipedia’s launch, consistent with the model’s predictions. Taken together, our findings indicate that embedded AI tools can complement-rather than crowd out-voluntary human contributions, highlighting a positive feedback loop between AI features and the data ecosystem that sustains modern AI models.
 - title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585
   month: Dec
@@ -28,7 +29,8 @@ working_papers:
     url: /slides/Twitter_AI_slides.pdf
   featured: true
   paper_id: ssrn-5923585
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    We study the attempted migration of the #EconTwitter community from Twitter/X to Mastodon following Elon Musk's acquisition of the platform. Leveraging a dataset of 4.3 million tweets from over 2,000 economists---including detailed records of their weekly activity and network-mediated exposure to peers' Mastodon-related retweets---we examine how peer discussions relate to platform engagement. In a difference-in-differences framework, we estimate that greater exposure to Mastodon-related discussions is followed by a short-run decline in activity on Twitter/X. However, this relationship attenuates substantially when we control for economist fixed effects or examine longer-run behavior. Two years later, economists with higher Mastodon exposure are somewhat more likely to multi-home across platforms but only marginally less active on Twitter/X. These findings highlight the strength of network effects and the difficulty of disrupting incumbent platforms, even during periods of widespread discontent.
 - title: An Empirical Decomposition of Information vs Sentiment Shifts in Advertising
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5297093
   month: Jun
@@ -40,7 +42,8 @@ working_papers:
     url: https://users.wfu.edu/strumpks/
   featured: true
   paper_id: ssrn-5297093
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    Advertising influences market expectations through three distinct pathways: raising awareness, shaping sentiment, and providing information. This paper empirically disentangles these effects using movie trailers as an empirical setting, leveraging a dataset of nearly 600 wide-release U.S. films (2017-2021). We analyze how trailer releases affect pre-theatrical demand expectations, as reflected in Hollywood Stock Exchange (HSX) prices, and measure the three channels of consumer engagement through Twitter discussions and Wikipedia page views. Our findings show that trailers significantly boost HSX prices, particularly for non-sequels with lower prior awareness. While heightened engagement correlates with stronger market expectations, additional informational content can sometimes dampen enthusiasm. Moreover, trailer releases reduces uncertainty, as evidenced by a decline in HSX price volatility for non-sequels. By disentangling the three pathways of advertising influence, this study contributes to the literature on advertising effectiveness and offers actionable insights for marketers optimizing promotional strategies in a digital landscape.
 - title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
   month: May
@@ -66,7 +69,8 @@ working_papers:
     url: https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias
   featured: true
   paper_id: ssrn-4968469
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    We introduce a novel method for detecting supply-side media bias without needing information on the ideological leanings of media owners or editors. We analyze the most prominent part of media sites-the digital homepage. Using data from over 100,000 articles from The New York Times (NYT) and The Wall Street Journal (WSJ), along with 24 million tweets, we examine what drives article duration on homepages. Controlling for demand-side factors, we find that ideologically slanted articles remain longer due to supply-side biases: liberal articles on the NYT and to a lesser extent conservative ones on the WSJ. Further analysis into articles' transition to print and podcasts suggest that competition may reduce media bias, as predicted by models of supply-side bias. Our approach can be applied to a range of media sites, and the estimates have implications for regulators.
 - title: Quantifying Racial Prejudices with Housing Transaction Data
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4249510
   month: Sep
