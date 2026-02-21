@@ -84,7 +84,8 @@ working_papers:
   - label: New York Times
     url: https://www.nytimes.com/2023/06/07/opinion/suburbs-politics-integration.html?smid=nytcore-android-share
   paper_id: ssrn-4249510
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    This paper aims to quantify racial prejudices using transaction-level housing market data. We pin down the impact of a marginal change of racial composition in a narrowly-defined neighborhood on the price appreciation between repeated sales of a house, and we find that an additional nonwhite household within a radius of 0.2 miles reduces the price appreciation by 1.27 percentage points. The effects are weaker in neighborhoods with a thicker housing market and a higher income level, suggesting that the role of racial prejudices is limited by market forces. The effects are also associated with voting behaviors and public anti-racism statements made on social media, indicating that they are likely to be driven by taste-based racial preferences. While we also find evidence of racial price discrimination effects as in the literature, these effects tend to be a form of statistical discrimination driven by other factors that correlate with race.
 - title: All the Headlines that Are Fit to Change
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4075398
   month: Mar
@@ -99,7 +100,8 @@ working_papers:
   - label: U Penn Law School Economics of Digital Service Blog
     url: https://www.law.upenn.edu/live/blogs/129-all-the-headlines-that-are-fit-to-change-2022
   paper_id: ssrn-4075398
-  abstract: Abstract unavailable. Please see SSRN page.
+  abstract: |-
+    We study how the New York Times changes headlines after an article has been published. We track the 35,000 articles on the newspaper's home page between February 2021 and April 2022, and find that 10% have an immediate headline change while 11% undergo an A/B test where two titles are trialed against one another over a short time window. We also collect every tweet of an article in our data. We first look at which articles get a headline change of some form. Article type matters: popularity on Twitter, hard news, negative sentiment headline, and mentions from more partisan Twitter accounts are associated with headline changes. Another factor is social pressure, negative tweets from users connected to the reporter or the newspaper, which leads to more immediate headline changes and to a lesser extent to A/B tests. Next we examine how headline changes impact an article's performance metrics. After accounting for selection, we find that headline changes increase an article's popularity. There is also evidence that headline changes increase the negative sentiment and liberal political slant when it is tweeted. We also analyze headline changes at the Wall Street Journal for a shorter period, and find comparable behavior. Our results have implications for distinguishing supply and demand driven models of media bias, how digitization may foster media consolidation, and conditions under which economic or partisan motives drive newspaper decision-making.
 work_in_progress:
 - Social Network Addiction, with Koleman Strumpf and Tsz-Nga Wong
 - 'Dissecting Netflix''s Self-Preferencing: Evidence from Viewer-Level Data, with Shi Qi and Koleman Strumpf'
