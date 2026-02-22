@@ -1,0 +1,218 @@
+- id: ssrn-5853062
+  title: 'How AI Reshapes Human Content Creation: The Case of Wikipedia'
+  authors:
+  - Tin Cheuk Leung
+  - Koleman Strumpf
+  year: 2026
+  date: Jan 2026
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5853062
+  pdf_path: /papers/working%20papers/How%20AI%20Reshapes%20Human%20Content%20Creation-%20The%20Case%20of%20Wikipedia.pdf
+  abstract: "Generative AI models rely on large volumes of user-generated content (UGC), yet\nwe know little about how AI tools affect the production of that underlying content.\nWe study this question by examining the short-run impact of the introduction of\nGrokipedia, an AI-generated online encyclopedia operated by xAI, which provides\nautomated entries that could either substitute for human editing or draw in new\ncontributors. We develop a simple theoretical framework in which AI entries can\nredirect user attention and stimulate human editing through novel framing, yielding\nambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million\nWikipedia pages of notable individuals, we exploit the fact that only a subset have\ncomparable Grokipedia entries to estimate the causal effect of AI on subsequent\nhuman contributions, constructing matched samples of treated and untreated pages\nwithin occupational fields. We find a consistent and surprising result:the availability\n\
+    of Grokipedia increases human editing activity. Page views also rise, suggesting that\nAI entries act as an attention amplifier rather than a pure substitute for Wikipedia\ncontent. Exploiting variation in the semantic similarity between Grokipedia entries\nand their corresponding Wikipedia articles, we further show that pages withlower\nsimilarity experiencelargerincreases in editing after Grokipedia\u2019s launch, consistent\nwith the model\u2019s predictions. Taken together, our findings indicate that embedded\nAI tools can complement\u2014rather than crowd out\u2014voluntary human contributions,\nhighlighting a positive feedback loop between AI features and the data ecosystem\nthat sustains modern AI models."
+  fulltext_hash: 71c97fee8f0b5ec53f05813f44355097c8b46015a86a3fc47f7292991f841429
+  fulltext_excerpt: "How AI Reshapes Human Content Creation:\nThe Case of Wikipedia \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nJanuary 2026\nAbstract\nGenerative AI models rely on large volumes of user-generated content (UGC), yet\nwe know little about how AI tools affect the production of that underlying content.\nWe study this question by examining the short-run impact of the introduction of\nGrokipedia, an AI-generated online encyclopedia operated by xAI, which provides\nautomated entries that could either substitute for human editing or draw in new\ncontributors. We develop a simple theoretical framework in which AI entries can\nredirect user attention and stimulate human editing through novel framing, yielding\nambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million\nWikipedia pages of notable individuals, we exploit the fact that only a subset have\ncomparable Grokipedia entries to estimate the causal\
+    \ effect of AI on subsequent\nhuman contributions, constructing matched samples of treated and untreated pages\nwithin occupational fields. We find a consistent and surprising result:the availability\nof Grokipedia increases human editing activity. Page views also rise, suggesting that\nAI entries act as an attention amplifier rather than a pure substitute for Wikipedia\ncontent. Exploiting variation in the semantic similarity between Grokipedia entries\nand their corresponding Wikipedia articles, we further show that pages withlower\nsimilarity experiencelargerincreases in editing after Grokipedia\u2019s launch, consistent\nwith the model\u2019s predictions. Taken together, our findings indicate that embedded\nAI tools can complement\u2014rather than crowd out\u2014voluntary human contributions,\nhighlighting a positive feedback loop between AI features and the data ecosystem\nthat sustains modern AI models.\nJEL Classification: D83, L82, L86\nKeywords:Wikipedia, Digital Platforms,\
+    \ Artificial Intelligence, User-Generated Con-\ntent\n\u2217We thank Joshua Gans, Marit Hinnosaar, Shane Greenstein, Imke Reimers, Peter Thiel and Russell\nTsz-Nga Wong for their comments. We also thank@lthlnksofor assistance with Grokipedia data. The\nusual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nGenerative artificial intelligence (GAI) systems rely fundamentally on vast amounts of\nuser-generated content (UGC). Large language models are trained primarily on text drawn\nfrom the open internet, including encyclopedias, discussion forums,"
+  featured: true
+- id: ssrn-5923585
+  title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
+  authors:
+  - Tin Cheuk Leung
+  - Kwok Ping Tsang
+  year: 2025
+  date: Dec 2025
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585
+  pdf_path: /papers/working%20papers/%23EconTwitter%20and%20Elon%20Musk-%20Anatomy%20of%20a%20Failed%20Exodus.pdf
+  abstract: "We study the attempted migration of the #EconTwitter community from Twitter/X\nto Mastodon following Elon Musk\u2019s acquisition of the platform. Leveraging a dataset of\n4.3 million tweets from over 2,000 economists\u2014including detailed records of their weekly\nactivity and network-mediated exposure to peers\u2019 Mastodon-related retweets\u2014we examine\nhow peer discussions relate to platform engagement. In a difference-in-differences frame-\nwork, we estimate that greater exposure to Mastodon-related discussions is followed by\na short-run decline in activity on Twitter/X. However, this relationship attenuates substan-\ntially when we control for economist fixed effects or examine longer-run behavior. Two years\nlater, economists with higher Mastodon exposure are somewhat more likely to multi-home\nacross platforms but only marginally less active on Twitter/X. These findings highlight the\nstrength of network effects and the difficulty of disrupting incumbent platforms,\
+    \ even during\nperiods of widespread discontent."
+  fulltext_hash: 23f842aa35cecd23b6690d8a72352a7c2f66b59037119410ab2e77aa9ab89a16
+  fulltext_excerpt: "#EconTwitter and Elon Musk:\nAnatomy of a Failed Exodus *\nTin Cheuk Leung1 and Kwok Ping Tsang2\n1Wake Forest University (leungtc@wfu.edu)\n2Virginia Tech (byront@vt.edu)\nDecember 14, 2025\nAbstract\nWe study the attempted migration of the #EconTwitter community from Twitter/X\nto Mastodon following Elon Musk\u2019s acquisition of the platform. Leveraging a dataset of\n4.3 million tweets from over 2,000 economists\u2014including detailed records of their weekly\nactivity and network-mediated exposure to peers\u2019 Mastodon-related retweets\u2014we examine\nhow peer discussions relate to platform engagement. In a difference-in-differences frame-\nwork, we estimate that greater exposure to Mastodon-related discussions is followed by\na short-run decline in activity on Twitter/X. However, this relationship attenuates substan-\ntially when we control for economist fixed effects or examine longer-run behavior. Two years\nlater, economists with higher Mastodon exposure\
+    \ are somewhat more likely to multi-home\nacross platforms but only marginally less active on Twitter/X. These findings highlight the\nstrength of network effects and the difficulty of disrupting incumbent platforms, even during\nperiods of widespread discontent.\nJEL Classification:\nKeywords: Network effects, social media, Twitter/X, EconTwitter.\n*We would like to thank Rubaiyat Alam and seminar participants at CREED and SEA for helpful comments.\nWe also thank the Institute for Humane Studies for financial support and Munkhchimeg Sukhee and Eric Uehling\nfor research assistance. The usual disclaimer applies.\n1\n\n1 Introduction\nSocial media platforms derive much of their value from network effects, with Twitter (now X)\noffering a quintessential example, boasting 237.8 million monetizable daily active users as of Q2\n2022 [Twitter, Inc., 2022]. The platform\u2019s dominance stems from its large user base of content\nproviders and intricate social connections\u2014personal friends\
+    \ and influencers\u2014creating strong\nincentives for user retention [Ellison et al., 2007]. These network effects generate economies of\nscale, reinforcing Twitter/X\u2019s market dominance and acting as a barrier to competitors [Econo-\nmides, 1996a]. For users, this creates lock-in: when colleagues and influential figures remain,\nswitching platforms is less appealing [Zhu and Iansiti, 2012]. Isolated exit attempts rarely dis-\nrupt Twitter/X\u2019s position, but a major platform shock can, in principle, weaken this lock-in\n[Arthur, 1989].\nThis paper examines such a shock by analyzing the attempted and ultimately failed\n#EconTwitter exodus from Twitter/X. We assemble a dataset of 4.3 milli"
+  featured: true
+- id: ssrn-5297093
+  title: An Empirical Decomposition of Information vs Sentiment Shifts in Advertising
+  authors:
+  - Tin Cheuk Leung
+  - Shi Qi
+  - Koleman Strumpf
+  year: 2025
+  date: Jun 2025
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5297093
+  pdf_path: /papers/working%20papers/An%20Empirical%20Decomposition%20of%20Information%20vs%20Sentiment%20Shifts%20in%20Advertising.pdf
+  abstract: 'Advertising influences market expectations through three distinct pathways:
+
+    raising awareness, shaping sentiment, and providing information. This paper em-
+
+    pirically disentangles these effects using movie trailers as an empirical setting, lever-
+
+    aging a dataset of nearly 600 wide-release U.S. films (2017-2021). We analyze how
+
+    trailer releases affect pre-theatrical demand expectations, as reflected in Hollywood
+
+    Stock Exchange (HSX) prices, and measure the three channels of consumer engage-
+
+    ment through Twitter discussions and Wikipedia page views. Our findings show
+
+    that trailers significantly boost HSX prices, particularly for non-sequels with lower
+
+    prior awareness. While heightened engagement correlates with stronger market ex-
+
+    pectations, additional informational content can sometimes dampen enthusiasm.
+
+    Moreover, trailer releases reduces uncertainty, as evidenced by a decline in HSX
+
+    price volatility for non-sequels. By disentangling the three pathways of advertising
+
+    influence, this study contributes to the literature on advertising effectiveness and
+
+    offers actionable insights for marketers optimizing promotional strategies in a digital
+
+    landscape.'
+  fulltext_hash: 3f2d455204af559096a7c9b7626a94373efcc4ce10042ade4cda07901c5ec4ab
+  fulltext_excerpt: "An Empirical Decomposition of Information vs\nSentiment Shifts in Advertising\u2217\nTin Cheuk Leung \u2020\nWake Forest University\nShi Qi\u2021\nWilliam & Mary\nKoleman Strumpf \xA7\nWake Forest University\nJune 2025\nAbstract\nAdvertising influences market expectations through three distinct pathways:\nraising awareness, shaping sentiment, and providing information. This paper em-\npirically disentangles these effects using movie trailers as an empirical setting, lever-\naging a dataset of nearly 600 wide-release U.S. films (2017-2021). We analyze how\ntrailer releases affect pre-theatrical demand expectations, as reflected in Hollywood\nStock Exchange (HSX) prices, and measure the three channels of consumer engage-\nment through Twitter discussions and Wikipedia page views. Our findings show\nthat trailers significantly boost HSX prices, particularly for non-sequels with lower\nprior awareness. While heightened engagement correlates with stronger market ex-\npectations,\
+    \ additional informational content can sometimes dampen enthusiasm.\nMoreover, trailer releases reduces uncertainty, as evidenced by a decline in HSX\nprice volatility for non-sequels. By disentangling the three pathways of advertising\ninfluence, this study contributes to the literature on advertising effectiveness and\noffers actionable insights for marketers optimizing promotional strategies in a digital\nlandscape.\nJEL Classification: D83, L82\nKeywords: Advertising, Demand, Social Media, Machine Learning\n\u2217We would like to thank Andrew Ching, Ricard Gil, Garrett Scott, and seminar participants at Associ-\nation for Cultural Economics International Conference, International Industrial Organization Conference,\nthe Mallen Conference, North American Econometric Society Meetings and the Southern Economic As-\nsociation Meetings. The usual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email:\
+    \ leungtc@wfu.edu\n\u2021Email: sqi01@wm.edu\n\xA7Email: strumpks@wfu.edu\n1\n\n1 Introduction\nAdvertising plays a critical role in shaping consumer perceptions and market behavior.\nThe literature identifies three distinct mechanisms through which advertising influences\nconsumer behavior and market expectations. First, it raises awareness by increasing\na product\u2019s visibility, a crucial function in markets with frequent new product launches.\nSecond, it shapes sentiment, evoking emotional responses such as humor, nostalgia, excite-\nment, or fear-particularly in industries where differentiation hinges on perception rather\nthan tangible attributes. Finally, advertising conveys specific"
+  featured: true
+- id: ssrn-4968469
+  title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
+  authors:
+  - Tin Cheuk Leung
+  - Koleman Strumpf
+  year: 2025
+  date: May 2025
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
+  pdf_path: /papers/working%20papers/Disentangling%20Demand%20and%20Supply%20of%20Media%20Bias-%20The%20Case%20of%20Newspaper%20Homepages.pdf
+  abstract: "We introduce a novel method for detecting supply-side media bias without need-\ning information on the ideological leanings of media owners or editors. We analyze\nthe most prominent part of media sites\u2014the digital homepage. Using data from\nover 100,000 articles from The New York Times (NYT) and The Wall Street Journal\n(WSJ), along with 24 million tweets, we examine what drives article duration on\nhomepages. Controlling for demand-side factors, we find that ideologically slanted\narticles remain longer due to supply-side biases: liberal articles on the NYT and to a\nlesser extent conservative ones on the WSJ. Further analysis into articles\u2019 transition\nto print and podcasts suggest that competition may reduce media bias, as predicted\nby models of supply-side bias. Our approach can be applied to a range of media\nsites, and the estimates have implications for regulators."
+  fulltext_hash: ed36afc2c9c86ec85644fbfcd91c7023a59d646250d2c5df70bb8fe8f9882a84
+  fulltext_excerpt: "Disentangling Demand and Supply of Media Bias:\nThe Case of Newspaper Homepages \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nJune 2025\nAbstract\nWe introduce a novel method for detecting supply-side media bias without need-\ning information on the ideological leanings of media owners or editors. We analyze\nthe most prominent part of media sites\u2014the digital homepage. Using data from\nover 100,000 articles from The New York Times (NYT) and The Wall Street Journal\n(WSJ), along with 24 million tweets, we examine what drives article duration on\nhomepages. Controlling for demand-side factors, we find that ideologically slanted\narticles remain longer due to supply-side biases: liberal articles on the NYT and to a\nlesser extent conservative ones on the WSJ. Further analysis into articles\u2019 transition\nto print and podcasts suggest that competition may reduce media bias, as predicted\nby models of supply-side\
+    \ bias. Our approach can be applied to a range of media\nsites, and the estimates have implications for regulators.\nJEL Classification: D22, D72, D83, L82\nKeywords: Media Bias, Media Economics, Social Media, Machine Learning\n\u2217We would like to thank Julia Cag\xB4 e, Darlene C. Chisholm, Shane Greenstein, Tim Groseclose, David\nRothschild, Jose De Sousa, seminar participants from APIOS, CESifo Conference on Economics of Dig-\nitization, CREED, CUHK, Digital Economy Workshop Rotterdam, HKEA Biennial Conference, IIOC,\nThe Econometric Society NASM, Paris Conference on Digital Economics, SEA for their comments, Sarah\nBahr for information about the New York Times print deadline, Andy Shen for research assistance, Sean\nAnderson of the WFU HPC Facility for his help on coding, and Tom Cleveland on sharing his code for\nthe NYT scraper. We also thank Luth Research for providing user-level viewership of individual news\narticles. The usual disclaimer applies.\n\u2020Contact: Department\
+    \ of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nMedia bias is a prevalent issue globally, supported by extensive research and corresponding\nlow public trust in the media. 1 There are also detailed reports from within major media\nsources. Bennet (2023) argues there has been a rise in bias at the New York Times (NYT).2\nAs a former NYT op-ed editor, Bennet discusses potential causes for the shift in bias at\nthe NYT, attributing it to both a demand-driven shift from advertising to subscription\nrevenue models and a supply-driven change in reporters\u2019 ideals, reducing their focu"
+  featured: true
+- id: ssrn-4249510
+  title: Quantifying Racial Prejudices with Housing Transaction Data
+  authors:
+  - Tin Cheuk Leung
+  - Xiaojin (Aaron) Sun
+  - Kwok Ping Tsang
+  year: 2024
+  date: Sep 2024
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4249510
+  pdf_path: /papers/working%20papers/Quantifying%20Racial%20Prejudices%20with%20Housing%20Transaction%20Data.pdf
+  abstract: 'This paper aims to quantify racial prejudices using transaction-level housing market data.
+
+    We pin down the impact of a marginal change of racial composition in a narrowly-defined
+
+    neighborhood on the price appreciation between repeated sales of a house, and we find that
+
+    an additional nonwhite household within a radius of 0.2 miles reduces the price appreciation
+
+    by 1.27 percentage points. The effects are weaker in neighborhoods with a thicker housing
+
+    market and a higher income level, suggesting that the role of racial prejudices is limited by
+
+    market forces. The effects are also associated with voting behaviors and public anti-racism
+
+    statements made on social media, indicating that they are likely to be driven by taste-based
+
+    racial preferences. While we also find evidence of racial price discrimination effects as in the
+
+    literature, these effects tend to be a form of statistical discrimination driven by other factors
+
+    that correlate with race.'
+  fulltext_hash: 5966276310e480eba9f099da37091437aaf10fb0b2626c80bca5f71cceca83a7
+  fulltext_excerpt: 'Quantifying Racial Prejudices with Housing Transaction Data *
+
+    Tin Cheuk Leung1, Xiaojin Sun2, and Kwok Ping Tsang3
+
+    1Wake Forest University (leungtc@wfu.edu)
+
+    2Oklahoma State University (xiaojin.sun@okstate.edu)
+
+    3Virginia Tech (byront@vt.edu)
+
+    September 26, 2024
+
+    Abstract
+
+    This paper aims to quantify racial prejudices using transaction-level housing market data.
+
+    We pin down the impact of a marginal change of racial composition in a narrowly-defined
+
+    neighborhood on the price appreciation between repeated sales of a house, and we find that
+
+    an additional nonwhite household within a radius of 0.2 miles reduces the price appreciation
+
+    by 1.27 percentage points. The effects are weaker in neighborhoods with a thicker housing
+
+    market and a higher income level, suggesting that the role of racial prejudices is limited by
+
+    market forces. The effects are also associated with voting behaviors and public anti-racism
+
+    statements made on social media, indicating that they are likely to be driven by taste-based
+
+    racial preferences. While we also find evidence of racial price discrimination effects as in the
+
+    literature, these effects tend to be a form of statistical discrimination driven by other factors
+
+    that correlate with race.
+
+    JEL Classification: J15, R23, R30, H00
+
+    Keywords: Housing market, repeated sales, racial prejudices, machine learning.
+
+    Data Availability: The data that support the findings of this study are available from Zillow
+
+    but restrictions apply to the availability of these data, which were used under license for the
+
+    current study, and so are not publicly available.
+
+    *We would like to thank Zillow for providing us access to the Zillow Transaction and Assessment Dataset
+
+    (ZTRAX). More information on accessing the data can be found at http://www.zillow.com/ztrax. The results and
+
+    opinions are those of the authors and do not reflect the position of Zillow Group.
+
+    1
+
+
+    1 Introduction
+
+    Housing is more than a consumption good; it involves neighborhood effects shaped by the
+
+    behaviors and characteristics of residents. Preferences for quietness, community support, and
+
+    safety often influence housing choices, alongside the neighborhood racial composition. Racial
+
+    prejudices, i.e., preferences for or against certain racial groups, play a key role in these decisions.
+
+    This paper quantifies such prejudice by analyzing how the price appreciation of a repeatedly
+
+    transacted house is affected by changes in the racial composition of its immediate neighborhood
+
+    using housing transaction data from the state of Virginia. 1
+
+    In contrast to numerous studies that ask a similar question, we define a nei'
+  featured: false
+- id: ssrn-4075398
+  title: All the Headlines that Are Fit to Change
+  authors:
+  - Tin Cheuk Leung
+  - Koleman Strumpf
+  year: 2023
+  date: Mar 2023
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4075398
+  pdf_path: /papers/working%20papers/All%20the%20Headlines%20that%20Are%20Fit%20to%20Change.pdf
+  abstract: "We study how the New York Times changes headlines after an article has been\npublished. We track the 35,000 articles on the newspaper\u2019s home page between\nFebruary 2021 and April 2022, and find that 10% have an immediate headline\nchange while another 11% undergo an A/B test where two titles are trialed against\none another over a short time window. We also collect every tweet of an article\nin our data. We first look at which articles get a headline change of some form.\nArticle type matters: popularity on Twitter, hard news, negative sentiment headline,\nand mentions from more partisan Twitter accounts are associated with headline\nchanges. Another factor is social pressure, negative tweets from users connected to\nthe reporter or the newspaper, which leads to more immediate headline changes\nand to a lesser extent to A/B tests. Next we examine how headline changes\nimpact an article\u2019s performance metrics. After accounting for selection, we find\nthat headline changes\
+    \ increase an article\u2019s popularity. There is also evidence that\nheadline changes increase the negative sentiment and liberal political slant when\nit is tweeted. We also analyze headline changes at the Wall Street Journal for a\nshorter period, and find comparable behavior. Our results have implications for\ndistinguishing supply and demand driven models of media bias, how digitization\nmay foster media consolidation, and conditions under which economic or partisan\nmotives drive newspaper decision-making."
+  fulltext_hash: 0735b7e8cb006340860010280d9da3cb0529c09c84fd3eb829d7a0e5493f6f5b
+  fulltext_excerpt: "All the Headlines that Are Fit to Change \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nMarch 2023\nAbstract\nWe study how the New York Times changes headlines after an article has been\npublished. We track the 35,000 articles on the newspaper\u2019s home page between\nFebruary 2021 and April 2022, and find that 10% have an immediate headline\nchange while another 11% undergo an A/B test where two titles are trialed against\none another over a short time window. We also collect every tweet of an article\nin our data. We first look at which articles get a headline change of some form.\nArticle type matters: popularity on Twitter, hard news, negative sentiment headline,\nand mentions from more partisan Twitter accounts are associated with headline\nchanges. Another factor is social pressure, negative tweets from users connected to\nthe reporter or the newspaper, which leads to more immediate headline changes\nand\
+    \ to a lesser extent to A/B tests. Next we examine how headline changes\nimpact an article\u2019s performance metrics. After accounting for selection, we find\nthat headline changes increase an article\u2019s popularity. There is also evidence that\nheadline changes increase the negative sentiment and liberal political slant when\nit is tweeted. We also analyze headline changes at the Wall Street Journal for a\nshorter period, and find comparable behavior. Our results have implications for\ndistinguishing supply and demand driven models of media bias, how digitization\nmay foster media consolidation, and conditions under which economic or partisan\nmotives drive newspaper decision-making.\nJEL Classification: D83, L82\nKeywords: A/B Testing, Media Economics, Machine Learning, Social Media\n\u2217We would like to thank Luis Aguiar, John Dalton, Simone Galperti, Lisa George, Aeimit Lakdawala,\nChristian Peukert, David Rothschild, and seminar participants at CUHK-Zhejiang University Workshop\n\
+    on Media Economics, Penn Carey (Economics of Digital Services Research Symposium), CREED,\nMicrosoft Research Lab - New York City, NYC Media Seminar (Columbia and CUNY Hunter), SEA,\nVirtual Digital Economy (VIDE) seminar, William and Mary for their comments, Sean Anderson of the\nWFU HPC Facility, Tom Lam, Julian TszKin Chan for their help on coding, Tom Cleveland on sharing\nhis NYT headline data and code for the NYT scraper, the Ground News on sharing its Blindspotter data.\nWe also gratefully acknowledge financial help from Center for Technology, Innovation and Competition\n(CTIC) from the University of Pennsylvania and the Knight Foundation. The usual disclaimer applies.\n\u2020"
+  featured: false

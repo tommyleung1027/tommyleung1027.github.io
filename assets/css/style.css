@@ -311,6 +311,9 @@ body.modal-open #page {
 
 .modal-actions {
   margin: 0.2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
 }
 
 @media (max-width: 760px) {

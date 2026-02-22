@@ -6,3 +6,5 @@ node_modules/
 .gem/
 .bundle/
 vendor/bundle/
+__pycache__/
+*.pyc

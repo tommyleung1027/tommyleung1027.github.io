@@ -4,19 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeButton = document.getElementById('abstract-modal-close');
   const titleNode = document.getElementById('abstract-title');
   const bodyNode = document.getElementById('abstract-body');
-  const linkNode = document.getElementById('abstract-ssrn-link');
+  const primaryLinkNode = document.getElementById('abstract-primary-link');
+  const pdfLinkNode = document.getElementById('abstract-pdf-link');
 
-  if (!backdrop || !modal || !closeButton || !titleNode || !bodyNode || !linkNode) {
+  if (!backdrop || !modal || !closeButton || !titleNode || !bodyNode || !primaryLinkNode || !pdfLinkNode) {
     return;
   }
 
   let activeTrigger = null;
 
+  const setLink = (node, href, label) => {
+    if (href) {
+      node.href = href;
+      node.textContent = label;
+      node.hidden = false;
+    } else {
+      node.href = '#';
+      node.hidden = true;
+    }
+  };
+
   const openModal = (trigger) => {
     activeTrigger = trigger;
-    titleNode.textContent = trigger.dataset.title || 'Working Paper';
-    bodyNode.textContent = trigger.dataset.abstract || 'Abstract unavailable. Please see SSRN page.';
-    linkNode.href = trigger.dataset.url || '#';
+    titleNode.textContent = trigger.dataset.title || 'Paper';
+
+    const abstractText = trigger.dataset.abstract || 'Abstract unavailable.';
+    bodyNode.textContent = abstractText;
+
+    const primaryHref = trigger.dataset.url || '';
+    const pdfHref = trigger.dataset.pdfUrl || '';
+    setLink(primaryLinkNode, primaryHref, 'Open paper link');
+    setLink(pdfLinkNode, pdfHref, 'Open PDF');
 
     backdrop.hidden = false;
     modal.hidden = false;

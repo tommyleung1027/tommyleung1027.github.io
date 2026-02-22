@@ -50,41 +50,47 @@ title: Home
 <section>
   <h2>Featured Working Papers</h2>
   <div class="paper-list">
-    {% assign featured = site.data.research.working_papers | where: 'featured', true %}
+    {% assign featured = site.data.working_papers | where: 'featured', true %}
     {% for item in featured limit:4 %}
+    {% assign primary_link = item.external_url %}
+    {% if primary_link == nil or primary_link == '' %}
+      {% assign primary_link = item.pdf_path | relative_url %}
+    {% endif %}
+    {% assign abstract_text = item.abstract %}
+    {% if abstract_text == nil or abstract_text == '' %}
+      {% assign abstract_text = 'Abstract unavailable.' %}
+    {% endif %}
     <article class="paper-card compact">
-      <h3 class="paper-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></h3>
-      {% if item.subtitle %}<p class="meta compact-line">{{ item.subtitle }}</p>{% endif %}
-      <p class="meta compact-line">{{ item.month }} {{ item.year }}</p>
-      {% if item.coauthors %}
-      <p class="meta compact-line">with
-        {% for coauthor in item.coauthors %}
-          {% if coauthor.url %}<a href="{{ coauthor.url }}" target="_blank" rel="noopener">{{ coauthor.name }}</a>{% else %}{{ coauthor.name }}{% endif %}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </p>
+      <h3 class="paper-title">
+        {% if primary_link and primary_link != '' %}
+        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title }}</a>
+        {% else %}
+        {{ item.title }}
+        {% endif %}
+      </h3>
+      {% if item.date and item.date != '' %}
+      <p class="meta compact-line">{{ item.date }}</p>
+      {% elsif item.year and item.year != '' %}
+      <p class="meta compact-line">{{ item.year }}</p>
       {% endif %}
-      {% if item.links %}
       <p class="inline-links compact-line">
-        {% for l in item.links %}
-          {% if l.url %}
-          <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
-          {% else %}
-          <span class="badge">{{ l.label }}</span>
-          {% endif %}
-        {% endfor %}
+        {% if item.external_url and item.external_url != '' %}
+        <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
+        {% endif %}
+        {% if item.pdf_path and item.pdf_path != '' %}
+        <a href="{{ item.pdf_path | relative_url }}" target="_blank" rel="noopener">PDF</a>
+        {% endif %}
       </p>
-      {% endif %}
-      {% if item.slides %}
-      <p class="inline-links compact-line"><a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label }}</a></p>
-      {% endif %}
+      <p class="meta compact-line">{{ item.authors | join: ', ' }}</p>
       <p class="compact-line">
         <button
           class="abstract-button js-view-abstract"
           type="button"
-          data-paper-id="{{ item.paper_id | escape }}"
+          data-paper-id="{{ item.id | escape }}"
           data-title="{{ item.title | escape }}"
-          data-abstract="{{ item.abstract | default: 'Abstract unavailable. Please see SSRN page.' | escape }}"
-          data-url="{{ item.url | escape }}"
+          data-abstract="{{ abstract_text | escape }}"
+          data-url="{{ primary_link | escape }}"
+          data-pdf-url="{{ item.pdf_path | relative_url | escape }}"
         >
           View Abstract
         </button>
