@@ -74,8 +74,25 @@ title: Home
       <p class="meta compact-line">{{ item.year }}</p>
       {% endif %}
       <p class="inline-links compact-line">
-        {% if item.external_url and item.external_url != '' %}
-        <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
+        {% for l in item.links %}
+          {% if l.url %}
+          <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+          {% else %}
+          <span class="badge">{{ l.label }}</span>
+          {% endif %}
+        {% endfor %}
+        {% if item.slides and item.slides.url %}
+        <a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label | default: 'Slides' }}</a>
+        {% endif %}
+        {% for m in item.mentions %}
+          {% if m.url %}
+          <a class="badge" href="{{ m.url }}" target="_blank" rel="noopener">{{ m.label }}</a>
+          {% endif %}
+        {% endfor %}
+        {% if item.links == nil or item.links.size == 0 %}
+          {% if item.external_url and item.external_url != '' %}
+          <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
+          {% endif %}
         {% endif %}
       </p>
       <p class="meta compact-line">{{ item.authors | join: ', ' }}</p>
