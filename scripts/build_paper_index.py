@@ -149,6 +149,32 @@ def normalize_space(text: str) -> str:
     return text.strip()
 
 
+def normalize_abstract_spacing(text: str) -> str:
+    text = normalize_space(text)
+    if not text:
+        return ""
+
+    # Fix line-break hyphenation from PDF extraction.
+    text = re.sub(r"(?<=[a-z])-\n(?=[a-z])", "", text)
+    text = re.sub(r"(?<=[a-z])-\s+(?=[a-z])", "", text)
+
+    # Collapse PDF line wrapping into natural sentence spacing.
+    joined = " ".join(line.strip() for line in text.splitlines() if line.strip())
+    joined = re.sub(r"\s+([,.;:!?])", r"\1", joined)
+    joined = re.sub(r"\(\s+", "(", joined)
+    joined = re.sub(r"\s+\)", ")", joined)
+    joined = re.sub(r"\s{2,}", " ", joined).strip()
+
+    # Drop trailing publisher boilerplate often attached below abstracts.
+    joined = re.split(
+        r"(?:©|\xA9|/C\d+).*?all rights reserved\.?",
+        joined,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0].strip()
+    return joined
+
+
 def read_pdf_text(path: Path, max_pages: int) -> str:
     reader = PdfReader(str(path))
     parts: List[str] = []
@@ -167,21 +193,33 @@ def extract_abstract(text: str) -> str:
     if not text:
         return DEFAULT_ABSTRACT
 
-    abstract_re = re.compile(
-        r"(?:^|\n)\s*abstract\s*[:\-]?\s*(.{120,4000}?)(?:\n\s*(?:jel|keywords?|introduction|1[\.\s]))",
-        flags=re.IGNORECASE | re.DOTALL,
+    source = normalize_space(text)
+    start_re = re.compile(r"(?:^|\n)\s*(?:abstract|a\s*b\s*s\s*t\s*r\s*a\s*c\s*t)\s*[:\-]?\s*", re.IGNORECASE)
+    stop_re = re.compile(
+        r"(?:\bjel(?:\s+classification|\s+codes?)?\b|\bkeywords?\b|(?:^|\s)(?:\d+|[ivx]+)\.\s*introduction\b|"
+        r"\barticle\s+history\b|\bcontents?\s+lists?\s+available\b|\breceived\b)",
+        re.IGNORECASE,
     )
-    match = abstract_re.search(text)
-    if match:
-        candidate = normalize_space(match.group(1))
-        if candidate:
+    start_match = start_re.search(source)
+    if start_match:
+        tail = source[start_match.end() :]
+        stop_match = stop_re.search(tail)
+        candidate = tail[: stop_match.start()] if stop_match else tail
+        candidate = normalize_abstract_spacing(candidate)
+        if len(candidate) >= 80:
             return candidate[:ABSTRACT_MAX_CHARS]
 
     chunks = [c.strip() for c in re.split(r"\n{2,}", text) if c.strip()]
+    noise_re = re.compile(
+        r"(journal homepage|contents lists available|article history|doi|received|copyright)",
+        re.IGNORECASE,
+    )
     for chunk in chunks:
-        cleaned = normalize_space(chunk)
+        cleaned = normalize_abstract_spacing(chunk)
         if len(cleaned) >= 120:
             cleaned = re.sub(r"^abstract\s*[:\-]?\s*", "", cleaned, flags=re.IGNORECASE)
+            if noise_re.search(cleaned):
+                continue
             return cleaned[:ABSTRACT_MAX_CHARS]
 
     return DEFAULT_ABSTRACT
