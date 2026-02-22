@@ -77,9 +77,6 @@ title: Home
         {% if item.external_url and item.external_url != '' %}
         <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
         {% endif %}
-        {% if item.pdf_path and item.pdf_path != '' %}
-        <a href="{{ item.pdf_path | relative_url }}" target="_blank" rel="noopener">PDF</a>
-        {% endif %}
       </p>
       <p class="meta compact-line">{{ item.authors | join: ', ' }}</p>
       <p class="compact-line">
@@ -90,7 +87,6 @@ title: Home
           data-title="{{ item.title | escape }}"
           data-abstract="{{ abstract_text | escape }}"
           data-url="{{ primary_link | escape }}"
-          data-pdf-url="{{ item.pdf_path | relative_url | escape }}"
         >
           View Abstract
         </button>

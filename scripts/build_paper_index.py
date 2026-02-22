@@ -290,6 +290,10 @@ def bootstrap_from_research() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]
                 "fulltext_hash": "",
                 "fulltext_excerpt": "",
                 "featured": bool(item.get("featured", False)),
+                "links": item.get("links", []),
+                "slides": item.get("slides", {}),
+                "mentions": item.get("mentions", []),
+                "coauthors": item.get("coauthors", []),
             }
         )
 
@@ -328,6 +332,8 @@ def bootstrap_from_research() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]
                 "abstract": DEFAULT_ABSTRACT,
                 "fulltext_hash": "",
                 "fulltext_excerpt": "",
+                "citation": citation,
+                "links": links if isinstance(links, list) else [],
             }
         )
 
@@ -358,8 +364,47 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
         }
         if "featured" in raw:
             item["featured"] = bool(raw.get("featured"))
+        for optional in ("links", "slides", "mentions", "coauthors", "citation"):
+            if optional in raw:
+                item[optional] = raw.get(optional)
         normalized.append(item)
     return normalized
+
+
+def enrich_from_research(
+    entries: List[Dict[str, Any]],
+    section: str,
+    optional_keys: List[str],
+) -> None:
+    research = load_yaml(RESEARCH_FILE, {})
+    if not isinstance(research, dict):
+        return
+    source_items = research.get(section, [])
+    if not isinstance(source_items, list):
+        return
+
+    by_title: Dict[str, Dict[str, Any]] = {}
+    for item in source_items:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get("title", "")).strip()
+        if not title and section == "publications":
+            citation = str(item.get("citation", "")).strip()
+            if citation:
+                title, _, _ = parse_citation(citation)
+        if not title:
+            continue
+        by_title[normalize_title(title)] = item
+
+    for entry in entries:
+        key = normalize_title(str(entry.get("title", "")))
+        source = by_title.get(key)
+        if not source:
+            continue
+        for optional in optional_keys:
+            if optional not in entry or not entry.get(optional):
+                if optional in source and source.get(optional):
+                    entry[optional] = source.get(optional)
 
 
 def resolve_match(
@@ -562,11 +607,19 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
     publications = load_yaml(PUBLICATIONS_FILE, None)
 
     if isinstance(working, list) and isinstance(publications, list):
-        return (
-            ensure_schema(working, "working_paper"),
-            ensure_schema(publications, "publication"),
-            created,
+        working_entries = ensure_schema(working, "working_paper")
+        publication_entries = ensure_schema(publications, "publication")
+        enrich_from_research(
+            working_entries,
+            section="working_papers",
+            optional_keys=["links", "slides", "mentions", "coauthors"],
         )
+        enrich_from_research(
+            publication_entries,
+            section="publications",
+            optional_keys=["citation", "links"],
+        )
+        return (working_entries, publication_entries, created)
 
     boot_working, boot_publications = bootstrap_from_research()
     created = True

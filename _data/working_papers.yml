@@ -15,6 +15,14 @@
     \ effect of AI on subsequent\nhuman contributions, constructing matched samples of treated and untreated pages\nwithin occupational fields. We find a consistent and surprising result:the availability\nof Grokipedia increases human editing activity. Page views also rise, suggesting that\nAI entries act as an attention amplifier rather than a pure substitute for Wikipedia\ncontent. Exploiting variation in the semantic similarity between Grokipedia entries\nand their corresponding Wikipedia articles, we further show that pages withlower\nsimilarity experiencelargerincreases in editing after Grokipedia\u2019s launch, consistent\nwith the model\u2019s predictions. Taken together, our findings indicate that embedded\nAI tools can complement\u2014rather than crowd out\u2014voluntary human contributions,\nhighlighting a positive feedback loop between AI features and the data ecosystem\nthat sustains modern AI models.\nJEL Classification: D83, L82, L86\nKeywords:Wikipedia, Digital Platforms,\
     \ Artificial Intelligence, User-Generated Con-\ntent\n\u2217We thank Joshua Gans, Marit Hinnosaar, Shane Greenstein, Imke Reimers, Peter Thiel and Russell\nTsz-Nga Wong for their comments. We also thank@lthlnksofor assistance with Grokipedia data. The\nusual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nGenerative artificial intelligence (GAI) systems rely fundamentally on vast amounts of\nuser-generated content (UGC). Large language models are trained primarily on text drawn\nfrom the open internet, including encyclopedias, discussion forums,"
   featured: true
+  links:
+  - label: Under Review
+  slides:
+    label: AI-generated slides
+    url: /slides/Grokipedia_slides_NotebookLM.pdf
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
 - id: ssrn-5923585
   title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
   authors:
@@ -32,6 +40,14 @@
     \ are somewhat more likely to multi-home\nacross platforms but only marginally less active on Twitter/X. These findings highlight the\nstrength of network effects and the difficulty of disrupting incumbent platforms, even during\nperiods of widespread discontent.\nJEL Classification:\nKeywords: Network effects, social media, Twitter/X, EconTwitter.\n*We would like to thank Rubaiyat Alam and seminar participants at CREED and SEA for helpful comments.\nWe also thank the Institute for Humane Studies for financial support and Munkhchimeg Sukhee and Eric Uehling\nfor research assistance. The usual disclaimer applies.\n1\n\n1 Introduction\nSocial media platforms derive much of their value from network effects, with Twitter (now X)\noffering a quintessential example, boasting 237.8 million monetizable daily active users as of Q2\n2022 [Twitter, Inc., 2022]. The platform\u2019s dominance stems from its large user base of content\nproviders and intricate social connections\u2014personal friends\
     \ and influencers\u2014creating strong\nincentives for user retention [Ellison et al., 2007]. These network effects generate economies of\nscale, reinforcing Twitter/X\u2019s market dominance and acting as a barrier to competitors [Econo-\nmides, 1996a]. For users, this creates lock-in: when colleagues and influential figures remain,\nswitching platforms is less appealing [Zhu and Iansiti, 2012]. Isolated exit attempts rarely dis-\nrupt Twitter/X\u2019s position, but a major platform shock can, in principle, weaken this lock-in\n[Arthur, 1989].\nThis paper examines such a shock by analyzing the attempted and ultimately failed\n#EconTwitter exodus from Twitter/X. We assemble a dataset of 4.3 milli"
   featured: true
+  links:
+  - label: Under Review
+  slides:
+    label: AI-generated slides
+    url: /slides/Twitter_AI_slides.pdf
+  coauthors:
+  - name: Kwok Ping Tsang
+    url: https://sites.google.com/site/byrontkp/
 - id: ssrn-5297093
   title: An Empirical Decomposition of Information vs Sentiment Shifts in Advertising
   authors:
@@ -77,6 +93,11 @@
     \ additional informational content can sometimes dampen enthusiasm.\nMoreover, trailer releases reduces uncertainty, as evidenced by a decline in HSX\nprice volatility for non-sequels. By disentangling the three pathways of advertising\ninfluence, this study contributes to the literature on advertising effectiveness and\noffers actionable insights for marketers optimizing promotional strategies in a digital\nlandscape.\nJEL Classification: D83, L82\nKeywords: Advertising, Demand, Social Media, Machine Learning\n\u2217We would like to thank Andrew Ching, Ricard Gil, Garrett Scott, and seminar participants at Associ-\nation for Cultural Economics International Conference, International Industrial Organization Conference,\nthe Mallen Conference, North American Econometric Society Meetings and the Southern Economic As-\nsociation Meetings. The usual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email:\
     \ leungtc@wfu.edu\n\u2021Email: sqi01@wm.edu\n\xA7Email: strumpks@wfu.edu\n1\n\n1 Introduction\nAdvertising plays a critical role in shaping consumer perceptions and market behavior.\nThe literature identifies three distinct mechanisms through which advertising influences\nconsumer behavior and market expectations. First, it raises awareness by increasing\na product\u2019s visibility, a crucial function in markets with frequent new product launches.\nSecond, it shapes sentiment, evoking emotional responses such as humor, nostalgia, excite-\nment, or fear-particularly in industries where differentiation hinges on perception rather\nthan tangible attributes. Finally, advertising conveys specific"
   featured: true
+  coauthors:
+  - name: Shi Qi
+    url: https://sites.google.com/site/shiqiecon/Home
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
 - id: ssrn-4968469
   title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
   authors:
@@ -93,6 +114,25 @@
     \ bias. Our approach can be applied to a range of media\nsites, and the estimates have implications for regulators.\nJEL Classification: D22, D72, D83, L82\nKeywords: Media Bias, Media Economics, Social Media, Machine Learning\n\u2217We would like to thank Julia Cag\xB4 e, Darlene C. Chisholm, Shane Greenstein, Tim Groseclose, David\nRothschild, Jose De Sousa, seminar participants from APIOS, CESifo Conference on Economics of Dig-\nitization, CREED, CUHK, Digital Economy Workshop Rotterdam, HKEA Biennial Conference, IIOC,\nThe Econometric Society NASM, Paris Conference on Digital Economics, SEA for their comments, Sarah\nBahr for information about the New York Times print deadline, Andy Shen for research assistance, Sean\nAnderson of the WFU HPC Facility for his help on coding, and Tom Cleveland on sharing his code for\nthe NYT scraper. We also thank Luth Research for providing user-level viewership of individual news\narticles. The usual disclaimer applies.\n\u2020Contact: Department\
     \ of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nMedia bias is a prevalent issue globally, supported by extensive research and corresponding\nlow public trust in the media. 1 There are also detailed reports from within major media\nsources. Bennet (2023) argues there has been a rise in bias at the New York Times (NYT).2\nAs a former NYT op-ed editor, Bennet discusses potential causes for the shift in bias at\nthe NYT, attributing it to both a demand-driven shift from advertising to subscription\nrevenue models and a supply-driven change in reporters\u2019 ideals, reducing their focu"
   featured: true
+  links:
+  - label: CESifo Working Paper No. 10890
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294
+  - label: R&R
+  slides:
+    label: Slides
+    url: /slides/slides_NASM2024.pdf
+  mentions:
+  - label: Marginal Revolution
+    url: https://marginalrevolution.com/marginalrevolution/2024/02/new-data-on-media-bias.html
+  - label: The Conversation
+    url: https://theconversation.com/is-news-bias-fueled-by-journalists-supplying-slanted-views-or-readers-demanding-them-an-economist-weighs-in-236769
+  - label: WFU News
+    url: https://news.wfu.edu/2024/07/17/disentangling-media-bias/
+  - label: WFDD
+    url: https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
 - id: ssrn-4249510
   title: Quantifying Racial Prejudices with Housing Transaction Data
   authors:
@@ -199,6 +239,14 @@
 
     In contrast to numerous studies that ask a similar question, we define a nei'
   featured: false
+  mentions:
+  - label: New York Times
+    url: https://www.nytimes.com/2023/06/07/opinion/suburbs-politics-integration.html?smid=nytcore-android-share
+  coauthors:
+  - name: Xiaojin (Aaron) Sun
+    url: https://sites.google.com/a/vt.edu/aaronsun/
+  - name: Kwok Ping Tsang
+    url: https://sites.google.com/site/byrontkp/
 - id: ssrn-4075398
   title: All the Headlines that Are Fit to Change
   authors:
@@ -216,3 +264,12 @@
     \ to a lesser extent to A/B tests. Next we examine how headline changes\nimpact an article\u2019s performance metrics. After accounting for selection, we find\nthat headline changes increase an article\u2019s popularity. There is also evidence that\nheadline changes increase the negative sentiment and liberal political slant when\nit is tweeted. We also analyze headline changes at the Wall Street Journal for a\nshorter period, and find comparable behavior. Our results have implications for\ndistinguishing supply and demand driven models of media bias, how digitization\nmay foster media consolidation, and conditions under which economic or partisan\nmotives drive newspaper decision-making.\nJEL Classification: D83, L82\nKeywords: A/B Testing, Media Economics, Machine Learning, Social Media\n\u2217We would like to thank Luis Aguiar, John Dalton, Simone Galperti, Lisa George, Aeimit Lakdawala,\nChristian Peukert, David Rothschild, and seminar participants at CUHK-Zhejiang University Workshop\n\
     on Media Economics, Penn Carey (Economics of Digital Services Research Symposium), CREED,\nMicrosoft Research Lab - New York City, NYC Media Seminar (Columbia and CUNY Hunter), SEA,\nVirtual Digital Economy (VIDE) seminar, William and Mary for their comments, Sean Anderson of the\nWFU HPC Facility, Tom Lam, Julian TszKin Chan for their help on coding, Tom Cleveland on sharing\nhis NYT headline data and code for the NYT scraper, the Ground News on sharing its Blindspotter data.\nWe also gratefully acknowledge financial help from Center for Technology, Innovation and Competition\n(CTIC) from the University of Pennsylvania and the Knight Foundation. The usual disclaimer applies.\n\u2020"
   featured: false
+  slides:
+    label: Slides
+    url: https://drive.google.com/file/d/1vbpr66Zt-U5r31AvZfVHFAS4HI25j7m5/view?usp=sharing
+  mentions:
+  - label: U Penn Law School Economics of Digital Service Blog
+    url: https://www.law.upenn.edu/live/blogs/129-all-the-headlines-that-are-fit-to-change-2022
+  coauthors:
+  - name: Koleman Strumpf
+    url: http://users.wfu.edu/strumpks/

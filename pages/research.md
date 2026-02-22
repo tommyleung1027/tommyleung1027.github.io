@@ -41,14 +41,33 @@ permalink: /research/
         {% endif %}
         {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
       </p>
+
+      {% if item.coauthors and item.coauthors.size > 0 %}
+      <p class="meta">with
+        {% for coauthor in item.coauthors %}
+          {% if coauthor.url %}<a href="{{ coauthor.url }}" target="_blank" rel="noopener">{{ coauthor.name }}</a>{% else %}{{ coauthor.name }}{% endif %}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
+      {% else %}
       <p class="meta">{{ item.authors | join: ', ' }}</p>
+      {% endif %}
+
       <p class="inline-links">
-        {% if item.external_url and item.external_url != '' %}
-        <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
+        {% for l in item.links %}
+          {% if l.url %}
+          <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+          {% else %}
+          <span class="badge">{{ l.label }}</span>
+          {% endif %}
+        {% endfor %}
+        {% if item.slides and item.slides.url %}
+        <a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label | default: 'Slides' }}</a>
         {% endif %}
-        {% if item.pdf_path and item.pdf_path != '' %}
-        <a href="{{ item.pdf_path | relative_url }}" target="_blank" rel="noopener">PDF</a>
-        {% endif %}
+        {% for m in item.mentions %}
+          {% if m.url %}
+          <a class="badge" href="{{ m.url }}" target="_blank" rel="noopener">{{ m.label }}</a>
+          {% endif %}
+        {% endfor %}
         <button
           class="abstract-button js-view-abstract"
           type="button"
@@ -56,7 +75,6 @@ permalink: /research/
           data-title="{{ item.title | escape }}"
           data-abstract="{{ abstract_text | escape }}"
           data-url="{{ primary_link | escape }}"
-          data-pdf-url="{{ item.pdf_path | relative_url | escape }}"
         >
           View Abstract
         </button>
@@ -92,6 +110,9 @@ permalink: /research/
       data-paper-id="{{ item.id | escape }}"
       data-search="{{ item.title | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
     >
+      {% if item.citation and item.citation != '' %}
+      <p>{{ item.citation }}</p>
+      {% else %}
       <p>
         {% if primary_link and primary_link != '' %}
         <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title }}</a>
@@ -100,13 +121,32 @@ permalink: /research/
         {% endif %}
         {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
       </p>
-      <p class="meta">{{ item.authors | join: ', ' }}</p>
+      {% endif %}
+
+      {% if item.links and item.links.size > 0 %}
       <p class="inline-links">
-        {% if item.external_url and item.external_url != '' %}
-        <a href="{{ item.external_url }}" target="_blank" rel="noopener">Paper Link</a>
-        {% endif %}
-        {% if item.pdf_path and item.pdf_path != '' %}
-        <a href="{{ item.pdf_path | relative_url }}" target="_blank" rel="noopener">PDF</a>
+        {% for l in item.links %}
+          {% if l.url %}
+          <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+          {% else %}
+          <span class="badge">{{ l.label }}</span>
+          {% endif %}
+        {% endfor %}
+        <button
+          class="abstract-button js-view-abstract"
+          type="button"
+          data-paper-id="{{ item.id | escape }}"
+          data-title="{{ item.title | escape }}"
+          data-abstract="{{ abstract_text | escape }}"
+          data-url="{{ primary_link | escape }}"
+        >
+          View Abstract
+        </button>
+      </p>
+      {% else %}
+      <p class="inline-links">
+        {% if primary_link and primary_link != '' %}
+        <a href="{{ primary_link }}" target="_blank" rel="noopener">Paper Link</a>
         {% endif %}
         <button
           class="abstract-button js-view-abstract"
@@ -115,11 +155,11 @@ permalink: /research/
           data-title="{{ item.title | escape }}"
           data-abstract="{{ abstract_text | escape }}"
           data-url="{{ primary_link | escape }}"
-          data-pdf-url="{{ item.pdf_path | relative_url | escape }}"
         >
           View Abstract
         </button>
       </p>
+      {% endif %}
     </li>
     {% endfor %}
   </ol>

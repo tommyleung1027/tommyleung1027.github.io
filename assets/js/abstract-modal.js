@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const titleNode = document.getElementById('abstract-title');
   const bodyNode = document.getElementById('abstract-body');
   const primaryLinkNode = document.getElementById('abstract-primary-link');
-  const pdfLinkNode = document.getElementById('abstract-pdf-link');
 
-  if (!backdrop || !modal || !closeButton || !titleNode || !bodyNode || !primaryLinkNode || !pdfLinkNode) {
+  if (!backdrop || !modal || !closeButton || !titleNode || !bodyNode || !primaryLinkNode) {
     return;
   }
 
@@ -32,9 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyNode.textContent = abstractText;
 
     const primaryHref = trigger.dataset.url || '';
-    const pdfHref = trigger.dataset.pdfUrl || '';
     setLink(primaryLinkNode, primaryHref, 'Open paper link');
-    setLink(pdfLinkNode, pdfHref, 'Open PDF');
 
     backdrop.hidden = false;
     modal.hidden = false;
