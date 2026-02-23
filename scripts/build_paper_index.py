@@ -445,6 +445,31 @@ def enrich_from_research(
                     entry[optional] = source.get(optional)
 
 
+def enforce_publication_pdf_links(entries: List[Dict[str, Any]]) -> None:
+    for entry in entries:
+        if entry.get("type") != "publication":
+            continue
+
+        pdf_path = str(entry.get("pdf_path", "")).strip()
+        links_raw = entry.get("links", [])
+        links: List[Dict[str, Any]] = [l for l in links_raw if isinstance(l, dict)]
+
+        normalized_links: List[Dict[str, Any]] = []
+        for link in links:
+            label = str(link.get("label", "")).strip().lower()
+            if label in {"working paper version", "pdf links"}:
+                continue
+            normalized_links.append(link)
+
+        if pdf_path:
+            normalized_links.append({"label": "PDF links", "url": pdf_path})
+
+        if normalized_links:
+            entry["links"] = normalized_links
+        elif "links" in entry:
+            entry.pop("links", None)
+
+
 def resolve_match(
     pdf_path: Path,
     paper_type: str,
@@ -657,15 +682,15 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
             section="publications",
             optional_keys=["citation", "links"],
         )
+        enforce_publication_pdf_links(publication_entries)
         return (working_entries, publication_entries, created)
 
     boot_working, boot_publications = bootstrap_from_research()
     created = True
-    return (
-        ensure_schema(boot_working, "working_paper"),
-        ensure_schema(boot_publications, "publication"),
-        created,
-    )
+    working_entries = ensure_schema(boot_working, "working_paper")
+    publication_entries = ensure_schema(boot_publications, "publication")
+    enforce_publication_pdf_links(publication_entries)
+    return (working_entries, publication_entries, created)
 
 
 def main() -> int:
