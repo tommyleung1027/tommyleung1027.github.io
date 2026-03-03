@@ -15,7 +15,7 @@ permalink: /cv/
 </p>
 
 <div class="cv-embed">
-  <iframe src="{{ '/cv/LeungCV.pdf' | relative_url }}?v=20260303-2"
+  <iframe src="{{ '/cv/LeungCV_embed_20260303_3.pdf' | relative_url }}"
           width="100%"
           height="900px"
           title="Tin Cheuk Leung CV PDF">
