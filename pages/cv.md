@@ -7,7 +7,7 @@ permalink: /cv/
 <h1>Curriculum Vitae</h1>
 
 <p>
-  <a href="{{ '/cv/LeungCV.pdf' | relative_url }}"
+  <a href="{{ '/cv/LeungCV.pdf' | relative_url }}?v=20260303"
      class="btn btn-primary"
      download>
     Download CV (PDF)
@@ -15,11 +15,11 @@ permalink: /cv/
 </p>
 
 <div class="cv-embed">
-  <iframe src="{{ '/cv/LeungCV.pdf' | relative_url }}"
+  <iframe src="{{ '/cv/LeungCV.pdf' | relative_url }}?v=20260303"
           width="100%"
           height="900px"
           title="Tin Cheuk Leung CV PDF">
   </iframe>
 </div>
 
-<p class="meta">If the PDF does not load, use the <a href="{{ '/cv/LeungCV.pdf' | relative_url }}">direct CV link</a>.</p>
+<p class="meta">If the PDF does not load, use the <a href="{{ '/cv/LeungCV.pdf' | relative_url }}?v=20260303">direct CV link</a>.</p>
