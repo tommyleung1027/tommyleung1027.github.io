@@ -7,7 +7,7 @@
   year: 2026
   date: June 2026
   type: working_paper
-  external_url: ''
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6990898
   pdf_path: /papers/working%20papers/Netflix.pdf
   abstract: "This paper studies self-preferencing in subscription video streaming. We assemble a new dataset linking Netflix\u2019s U.S. catalog, Top 10 rankings, Wikipedia page views, and device-level streaming records. Conditional on external popularity and other observables, Netflix Originals are significantly more likely to appear in the Top 10 than comparable non-original titles, especially among series. Using a matched staggered difference-in-differences design around first Top 10 entry, we show that Top 10 placement causally increases subsequent viewership. The effect is weaker among devices with extensive prior Netflix viewing, consistent with personalized recommendations substituting for generic rankings. These findings provide evidence of platform gatekeeping in digital media."
   fulltext_hash: e2f1062e8192a1cd9090d7a0bfc75cd4972f0dda3fe035b1a2709f6c14fd059b
@@ -15,6 +15,12 @@
     evidence of platform gatekeeping in digital media.\nJEL Classification: D22, K21, L40, L82, M21\nKeywords: Self-Preferencing, Netflix, Digital Platforms, Platform Bias\n\u2217We are grateful to seminar participants at Bates College, CREED, the Mallen Conference, and SEA\nfor helpful comments. We thank Andy Shen for his research assistance. We thank the NET Institute\nwww.NETinst.org and the discretionary funding from Wake Forest for financial support. This research\nincludes content supplied by Samba TV; Copyright \xA9Samba TV, 2026. All rights reserved. The usual\ndisclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: sqi01@wm.edu\n\xA7Email: strumpks@wfu.edu\n1\n\n1 Introduction\nDigital platforms increasingly determine which products, services, and content consumers\nsee first. Search rankings, recommendation rows, app-store placement, marketplace buy\nboxes, and curated\
     \ popularity lists are not merely passive ordering devices. They allocate\nattention in markets where attention is scarce and where small changes in visibility can\nredirect demand. This control over visibility has made self-preferencing a central issue\nin competition policy. When a platform both operates an interface and supplies its own\nproducts or content on that interface, it may have the incentive and ability to steer users\ntoward affiliated offerings rather than observationally similar third-party alternatives. The\ncompetitive significance of such steering depends on market power. Preferential placement\nby a small platform may be commercially relevant, but it has limited competitive signifi-"
   featured: true
+  links:
+  - label: PDF
+    url: /papers/working%20papers/Netflix.pdf
+  slides:
+    label: AI-generated slides
+    url: /slides/Netflix_Self-Preferencing.pdf
   coauthors:
   - name: Shi Qi
     url: https://sites.google.com/site/shiqiecon/Home
