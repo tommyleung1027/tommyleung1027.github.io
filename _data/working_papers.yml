@@ -26,6 +26,7 @@
     url: https://sites.google.com/site/shiqiecon/Home
   - name: Koleman Strumpf
     url: https://users.wfu.edu/strumpks/
+  show_pdf: false
 - id: ssrn-5853062
   title: 'How AI Reshapes Human Content Creation: The Case of Wikipedia'
   authors:
@@ -99,6 +100,7 @@
     url: https://sites.google.com/site/shiqiecon/Home
   - name: Koleman Strumpf
     url: https://users.wfu.edu/strumpks/
+  show_paper_link: false
 - id: ssrn-4968469
   title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
   authors:

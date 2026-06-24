@@ -413,7 +413,7 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
         }
         if "featured" in raw:
             item["featured"] = bool(raw.get("featured"))
-        for optional in ("links", "slides", "mentions", "coauthors", "citation"):
+        for optional in ("links", "slides", "mentions", "coauthors", "citation", "show_pdf", "show_paper_link"):
             if optional in raw:
                 item[optional] = raw.get(optional)
         normalized.append(item)

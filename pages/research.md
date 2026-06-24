@@ -20,8 +20,10 @@ permalink: /research/
   <h2>Working Papers</h2>
   <ol class="research-list">
     {% for item in site.data.working_papers %}
-    {% assign primary_link = item.external_url %}
-    {% if primary_link == nil or primary_link == '' %}
+    {% assign primary_link = '' %}
+    {% if item.show_paper_link != false and item.external_url and item.external_url != '' %}
+      {% assign primary_link = item.external_url %}
+    {% elsif item.show_paper_link != false and item.show_pdf != false and item.pdf_path and item.pdf_path != '' %}
       {% assign primary_link = item.pdf_path | relative_url %}
     {% endif %}
     {% assign abstract_text = item.abstract %}
@@ -54,9 +56,16 @@ permalink: /research/
 
       <p class="inline-links">
         {% for l in item.links %}
-          {% if l.url %}
+          {% assign hide_link = false %}
+          {% if item.show_pdf == false and l.url == item.pdf_path %}
+            {% assign hide_link = true %}
+          {% endif %}
+          {% if item.show_paper_link == false and l.url == item.external_url %}
+            {% assign hide_link = true %}
+          {% endif %}
+          {% if l.url and hide_link != true %}
           <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
-          {% else %}
+          {% elsif hide_link != true %}
           <span class="badge">{{ l.label }}</span>
           {% endif %}
         {% endfor %}
