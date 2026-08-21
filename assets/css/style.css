@@ -150,6 +150,11 @@ h3 {
   margin: 0.15rem 0;
 }
 
+.paper-status {
+  font-style: italic;
+  font-weight: 700;
+}
+
 .inline-links {
   display: flex;
   flex-wrap: wrap;

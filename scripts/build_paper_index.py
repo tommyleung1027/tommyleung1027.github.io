@@ -339,6 +339,8 @@ def bootstrap_from_research() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]
                 "fulltext_hash": "",
                 "fulltext_excerpt": "",
                 "featured": bool(item.get("featured", False)),
+                "featured_order": item.get("featured_order", ""),
+                "status": str(item.get("status", "")).strip(),
                 "links": item.get("links", []),
                 "slides": item.get("slides", {}),
                 "mentions": item.get("mentions", []),
@@ -413,7 +415,17 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
         }
         if "featured" in raw:
             item["featured"] = bool(raw.get("featured"))
-        for optional in ("links", "slides", "mentions", "coauthors", "citation", "show_pdf", "show_paper_link"):
+        for optional in (
+            "featured_order",
+            "status",
+            "links",
+            "slides",
+            "mentions",
+            "coauthors",
+            "citation",
+            "show_pdf",
+            "show_paper_link",
+        ):
             if optional in raw:
                 item[optional] = raw.get(optional)
         normalized.append(item)
@@ -686,7 +698,7 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
         enrich_from_research(
             working_entries,
             section="working_papers",
-            optional_keys=["links", "slides", "mentions", "coauthors"],
+            optional_keys=["featured_order", "status", "links", "slides", "mentions", "coauthors"],
         )
         enrich_from_research(
             publication_entries,

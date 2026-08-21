@@ -54,6 +54,10 @@ permalink: /research/
       <p class="meta">{{ item.authors | join: ', ' }}</p>
       {% endif %}
 
+      {% if item.status and item.status != '' %}
+      <p class="paper-status">{{ item.status }}</p>
+      {% endif %}
+
       <p class="inline-links">
         {% for l in item.links %}
           {% assign hide_link = false %}

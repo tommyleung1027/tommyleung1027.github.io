@@ -50,7 +50,7 @@ title: Home
 <section>
   <h2>Featured Working Papers</h2>
   <div class="paper-list">
-    {% assign featured = site.data.working_papers | where: 'featured', true %}
+    {% assign featured = site.data.working_papers | where: 'featured', true | sort: 'featured_order' %}
     {% for item in featured limit:4 %}
     {% assign primary_link = '' %}
     {% if item.show_paper_link != false and item.external_url and item.external_url != '' %}
@@ -74,6 +74,9 @@ title: Home
       <p class="meta compact-line">{{ item.date }}</p>
       {% elsif item.year and item.year != '' %}
       <p class="meta compact-line">{{ item.year }}</p>
+      {% endif %}
+      {% if item.status and item.status != '' %}
+      <p class="paper-status compact-line">{{ item.status }}</p>
       {% endif %}
       <p class="inline-links compact-line">
         {% for l in item.links %}
