@@ -16,12 +16,12 @@ working_papers:
   paper_id: ssrn-5853062
   abstract: |-
     Generative AI models rely on large volumes of user-generated content (UGC), yet we know little about how AI tools affect the production of that underlying content. We study this question by examining the short-run impact of the introduction of Grokipedia, an AI-generated online encyclopedia operated by xAI, which provides automated entries that could either substitute for human editing or draw in new contributors. We develop a simple theoretical framework in which AI entries can redirect user attention and stimulate human editing through novel framing, yielding ambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million Wikipedia pages of notable individuals, we exploit the fact that only a subset have comparable Grokipedia entries to estimate the causal effect of AI on subsequent human contributions, constructing matched samples of treated and untreated pages within occupational fields. We find a consistent and surprising result: the availability of Grokipedia increases human editing activity. Page views also rise, suggesting that AI entries act as an attention amplifier rather than a pure substitute for Wikipedia content. Exploiting variation in the semantic similarity between Grokipedia entries and their corresponding Wikipedia articles, we further show that pages with lower similarity experience larger increases in editing after Grokipedia’s launch, consistent with the model’s predictions. Taken together, our findings indicate that embedded AI tools can complement-rather than crowd out-voluntary human contributions, highlighting a positive feedback loop between AI features and the data ecosystem that sustains modern AI models.
-- title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
+- title: 'Experimentation Without Exit: Multihoming and Platform Persistence in #EconTwitter'
+  previous_title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585
   month: Dec
   year: 2025
-  links:
-  - label: Under Review
+  status: 'R&R'
   coauthors:
   - name: Kwok Ping Tsang
     url: https://sites.google.com/site/byrontkp/
@@ -48,6 +48,7 @@ working_papers:
   abstract: |-
     Advertising influences market expectations through three distinct pathways: raising awareness, shaping sentiment, and providing information. This paper empirically disentangles these effects using movie trailers as an empirical setting, leveraging a dataset of nearly 600 wide-release U.S. films (2017-2021). We analyze how trailer releases affect pre-theatrical demand expectations, as reflected in Hollywood Stock Exchange (HSX) prices, and measure the three channels of consumer engagement through Twitter discussions and Wikipedia page views. Our findings show that trailers significantly boost HSX prices, particularly for non-sequels with lower prior awareness. While heightened engagement correlates with stronger market expectations, additional informational content can sometimes dampen enthusiasm. Moreover, trailer releases reduces uncertainty, as evidenced by a decline in HSX price volatility for non-sequels. By disentangling the three pathways of advertising influence, this study contributes to the literature on advertising effectiveness and offers actionable insights for marketers optimizing promotional strategies in a digital landscape.
 - title: 'Measuring Media Bias Through Homepage Duration: Evidence from NYT and WSJ'
+  previous_title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
   month: May
   year: 2025

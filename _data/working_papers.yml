@@ -55,7 +55,7 @@
   - name: Koleman Strumpf
     url: https://users.wfu.edu/strumpks/
 - id: ssrn-5923585
-  title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
+  title: 'Experimentation Without Exit: Multihoming and Platform Persistence in #EconTwitter'
   authors:
   - Tin Cheuk Leung
   - Kwok Ping Tsang
@@ -72,8 +72,8 @@
     \ and influencers\u2014creating strong\nincentives for user retention [Ellison et al., 2007]. These network effects generate economies of\nscale, reinforcing Twitter/X\u2019s market dominance and acting as a barrier to competitors [Econo-\nmides, 1996a]. For users, this creates lock-in: when colleagues and influential figures remain,\nswitching platforms is less appealing [Zhu and Iansiti, 2012]. Isolated exit attempts rarely dis-\nrupt Twitter/X\u2019s position, but a major platform shock can, in principle, weaken this lock-in\n[Arthur, 1989].\nThis paper examines such a shock by analyzing the attempted and ultimately failed\n#EconTwitter exodus from Twitter/X. We assemble a dataset of 4.3 milli"
   featured: true
   featured_order: 4
-  links:
-  - label: Under Review
+  status: R&R
+  previous_title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
   slides:
     label: AI-generated slides
     url: /slides/Twitter_AI_slides.pdf
@@ -123,6 +123,7 @@
   featured: true
   featured_order: 1
   status: Accepted subjected to minor revision at Journal of Law & Economics
+  previous_title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
   links:
   - label: CESifo Working Paper No. 10890
     url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294

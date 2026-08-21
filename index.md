@@ -70,6 +70,7 @@ title: Home
         {{ item.title }}
         {% endif %}
       </h3>
+      {% include paper_previous_title.html paper=item %}
       {% if item.date and item.date != '' %}
       <p class="meta compact-line">{{ item.date }}</p>
       {% elsif item.year and item.year != '' %}

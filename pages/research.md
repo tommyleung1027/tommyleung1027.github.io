@@ -33,7 +33,7 @@ permalink: /research/
     <li
       class="research-item"
       data-paper-id="{{ item.id | escape }}"
-      data-search="{{ item.title | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
+      data-search="{{ item.title | escape }} {{ item.previous_title | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
     >
       <p>
         {% if primary_link and primary_link != '' %}
@@ -43,6 +43,8 @@ permalink: /research/
         {% endif %}
         {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
       </p>
+
+      {% include paper_previous_title.html paper=item %}
 
       {% if item.coauthors and item.coauthors.size > 0 %}
       <p class="meta">with

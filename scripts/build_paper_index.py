@@ -124,6 +124,23 @@ def title_match_keys(text: str) -> List[str]:
     return list(dict.fromkeys(keys))
 
 
+def ensure_text_list(value: Any) -> List[str]:
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    if isinstance(value, str) and value.strip():
+        return [value.strip()]
+    return []
+
+
+def metadata_title_variants(item: Dict[str, Any]) -> List[str]:
+    variants = [
+        str(item.get("title", "")).strip(),
+        str(item.get("previous_title", "")).strip(),
+    ]
+    variants.extend(ensure_text_list(item.get("aliases")))
+    return list(dict.fromkeys(value for value in variants if value))
+
+
 def slugify(text: str) -> str:
     compact = normalize_title(text).replace(" ", "-")
     compact = re.sub(r"[^a-z0-9\-]+", "-", compact)
@@ -341,6 +358,8 @@ def bootstrap_from_research() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]
                 "featured": bool(item.get("featured", False)),
                 "featured_order": item.get("featured_order", ""),
                 "status": str(item.get("status", "")).strip(),
+                "previous_title": str(item.get("previous_title", "")).strip(),
+                "aliases": ensure_text_list(item.get("aliases")),
                 "links": item.get("links", []),
                 "slides": item.get("slides", {}),
                 "mentions": item.get("mentions", []),
@@ -418,6 +437,8 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
         for optional in (
             "featured_order",
             "status",
+            "previous_title",
+            "aliases",
             "links",
             "slides",
             "mentions",
@@ -444,6 +465,7 @@ def enrich_from_research(
     if not isinstance(source_items, list):
         return
 
+    by_id: Dict[str, Dict[str, Any]] = {}
     by_title: Dict[str, Dict[str, Any]] = {}
     for item in source_items:
         if not isinstance(item, dict):
@@ -455,11 +477,14 @@ def enrich_from_research(
                 title, _, _ = parse_citation(citation)
         if not title:
             continue
+        item_id = str(item.get("paper_id", "")).strip()
+        if item_id:
+            by_id[item_id] = item
         by_title[normalize_title(title)] = item
 
     for entry in entries:
         key = normalize_title(str(entry.get("title", "")))
-        source = by_title.get(key)
+        source = by_id.get(str(entry.get("id", "")).strip()) or by_title.get(key)
         if not source:
             continue
         for optional in optional_keys:
@@ -527,11 +552,16 @@ def resolve_match(
         for item in entries:
             if item.get("type") != paper_type:
                 continue
-            title_tokens = set(normalize_title(str(item.get("title", ""))).split())
-            if not stem_tokens or not title_tokens:
+            variant_token_sets = [
+                set(normalize_title(variant).split()) for variant in metadata_title_variants(item)
+            ]
+            variant_token_sets = [tokens for tokens in variant_token_sets if tokens]
+            if not stem_tokens or not variant_token_sets:
                 continue
-            overlap = len(stem_tokens & title_tokens)
-            score = (2.0 * overlap) / (len(stem_tokens) + len(title_tokens))
+            score = max(
+                (2.0 * len(stem_tokens & tokens)) / (len(stem_tokens) + len(tokens))
+                for tokens in variant_token_sets
+            )
             scored.append((score, item))
 
         scored.sort(key=lambda row: row[0], reverse=True)
@@ -570,8 +600,9 @@ def update_entries_for_type(
     by_pdf_stem: Dict[str, List[Dict[str, Any]]] = {}
     by_id: Dict[str, List[Dict[str, Any]]] = {}
     for item in entries:
-        for key in title_match_keys(str(item.get("title", ""))):
-            by_title.setdefault(key, []).append(item)
+        for variant in metadata_title_variants(item):
+            for key in title_match_keys(variant):
+                by_title.setdefault(key, []).append(item)
         for key in title_match_keys(web_path_to_stem(str(item.get("pdf_path", "")))):
             by_pdf_stem.setdefault(key, []).append(item)
         for key in title_match_keys(str(item.get("id", ""))):
@@ -660,23 +691,32 @@ def build_search_index(all_entries: Iterable[Dict[str, Any]]) -> List[Dict[str, 
         date = str(item.get("date", "")).strip()
         abstract = str(item.get("abstract", "")).strip()
         excerpt = str(item.get("fulltext_excerpt", "")).strip()
+        previous_title = str(item.get("previous_title", "")).strip()
+        aliases = ensure_text_list(item.get("aliases"))
 
-        searchable_text = normalize_space(" ".join([title, " ".join(authors), year, date, abstract, excerpt]))
-        index.append(
-            {
-                "id": str(item.get("id", "")).strip(),
-                "type": str(item.get("type", "")).strip(),
-                "title": title,
-                "authors": authors,
-                "year": year,
-                "date": date,
-                "external_url": str(item.get("external_url", "")).strip(),
-                "pdf_path": str(item.get("pdf_path", "")).strip(),
-                "abstract": abstract,
-                "fulltext_excerpt": excerpt,
-                "searchable_text": searchable_text,
-            }
+        searchable_text = normalize_space(
+            " ".join(
+                [title, previous_title, " ".join(aliases), " ".join(authors), year, date, abstract, excerpt]
+            )
         )
+        row = {
+            "id": str(item.get("id", "")).strip(),
+            "type": str(item.get("type", "")).strip(),
+            "title": title,
+            "authors": authors,
+            "year": year,
+            "date": date,
+            "external_url": str(item.get("external_url", "")).strip(),
+            "pdf_path": str(item.get("pdf_path", "")).strip(),
+            "abstract": abstract,
+            "fulltext_excerpt": excerpt,
+            "searchable_text": searchable_text,
+        }
+        if previous_title:
+            row["previous_title"] = previous_title
+        if aliases:
+            row["aliases"] = aliases
+        index.append(row)
     return index
 
 
@@ -698,7 +738,16 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
         enrich_from_research(
             working_entries,
             section="working_papers",
-            optional_keys=["featured_order", "status", "links", "slides", "mentions", "coauthors"],
+            optional_keys=[
+                "featured_order",
+                "status",
+                "previous_title",
+                "aliases",
+                "links",
+                "slides",
+                "mentions",
+                "coauthors",
+            ],
         )
         enrich_from_research(
             publication_entries,
