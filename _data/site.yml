@@ -28,5 +28,5 @@ links:
     label: "VIDE seminar series"
     url: "https://www.digitalecon.org/seminar"
 cv:
-  download_url: "https://www.dropbox.com/s/67z9e9xgds1lkuj/LeungCV.pdf?dl=0"
-  embed_url: "https://drive.google.com/file/d/13sPd1cRL2GgcDzupKuxGAkXfzrVdDwVT/preview"
+  download_url: "/cv/LeungCV.pdf"
+  embed_url: "/cv/LeungCV.pdf"
