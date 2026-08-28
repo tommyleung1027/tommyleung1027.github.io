@@ -1,3 +1,40 @@
+- id: ssrn-4968469
+  title: 'Measuring Media Bias Through Homepage Duration: Evidence from NYT and WSJ'
+  authors:
+  - Tin Cheuk Leung
+  - Koleman Strumpf
+  year: 2026
+  date: August 2026
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
+  pdf_path: /papers/working%20papers/JLE_R2.pdf
+  abstract: "We introduce a duration-based measure of newsroom emphasis based on the time articles remain on digital homepages. Using data on more than 100,000 NYT and WSJ articles and 24 million tweets, we examine how reader-engagement proxies and article slant jointly predict homepage survival. For the NYT, more pro-Democrat articles remain longer after conditioning on demand controls. For the WSJ, analogous slant associations are weaker overall and concentrated in selected subsets. The patterns are consistent with editorial weighting that is di\uFB00icult to reconcile with a purely demand-based interpretation, but they are not definitive causal evidence of supply-side bias. Profit-maximizing outlets may also give greater prominence to content that best retains their core audiences. The results therefore provide a duration-based measurement approach and disciplined descriptive facts for future work on mechanisms."
+  fulltext_hash: 55c340f0f35093f984fb69a726ed575e019fd649cd9c68e4a29e4eccf2e7c794
+  fulltext_excerpt: "Measuring Media Bias Through Homepage Duration:\nEvidence from NYT and WSJ \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nAugust 2026\n\u2217We would like to thank Julia Cag\xE9, Darlene C. Chisholm, Shane Greenstein, Tim Groseclose, Sam\nPeltzman (editor), David Rothschild, Jose De Sousa, seminar participants from APIOS, CESifo Con-\nference on Economics of Digitization, CREED, CUHK, Digital Economy Workshop Rotterdam, HKEA\nBiennial Conference, IIOC, The Econometric Society NASM, Paris Conference on Digital Economics,\nand SEA for their comments, Sarah Bahr for information about the New York Times print deadline,\nAndy Shen for research assistance, Sean Anderson of the WFU HPC Facility for his help on coding, and\nTom Cleveland for sharing his code for the NYT scraper. We also thank Luth Research for providing\nuser-level viewership of individual news articles, and Ground News for sharing Blindspotter data. The\n\
+    usual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\nAbstract\nWe introduce a duration-based measure of newsroom emphasis based on the time\narticles remain on digital homepages. Using data on more than 100,000 NYT and\nWSJ articles and 24 million tweets, we examine how reader-engagement proxies and\narticle slant jointly predict homepage survival. For the NYT, more pro-Democrat\narticles remain longer after conditioning on demand controls. For the WSJ, analo-\ngous slant associations are weaker overall and concentrated in selected subsets. The\npatterns are consistent with editorial weighting that is di\uFB00icult to reconcile with a\npurely demand-based interpretation, but they are not definitive causal evidence\nof supply-side bias. Profit-maximizing outlets may also give greater prominence\nto content that best retains their core audiences.\
+    \ The results therefore provide a\nduration-based measurement approach and disciplined descriptive facts for future\nwork on mechanisms.\nJEL Classification: D22, D72, D83, L82\nKeywords: Media Bias, Media Economics, Social Media, Machine Learning\n2\n\n1. Introduction\nDigital news creates a new margin along which media bias can operate, not only in what is\nwritten, but also in what editors keep prominently displayed and for how long. This paper\nintroduces a novel measurement approach for media bias based on article duration on a\nnewspaper\u2019s digital homepage.1 Homepage stories occupy privileged digital real estate,\nand duration on that page captures an outlet\u2019s allocation of attent"
+  featured: true
+  featured_order: 1
+  status: Accepted at Journal of Law & Economics
+  previous_title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
+  links:
+  - label: CESifo Working Paper No. 10890
+    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294
+  slides:
+    label: Slides
+    url: /slides/slides_NASM2024.pdf
+  mentions:
+  - label: Marginal Revolution
+    url: https://marginalrevolution.com/marginalrevolution/2024/02/new-data-on-media-bias.html
+  - label: The Conversation
+    url: https://theconversation.com/is-news-bias-fueled-by-journalists-supplying-slanted-views-or-readers-demanding-them-an-economist-weighs-in-236769
+  - label: WFU News
+    url: https://news.wfu.edu/2024/07/17/disentangling-media-bias/
+  - label: WFDD
+    url: https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
 - id: wp-dissecting-netflix-self-preferencing
   title: 'Dissecting Netflix''s Self-Preferencing: Evidence from Viewer-Level Data'
   authors:
@@ -105,43 +142,6 @@
   - name: Koleman Strumpf
     url: https://users.wfu.edu/strumpks/
   show_paper_link: false
-- id: ssrn-4968469
-  title: 'Measuring Media Bias Through Homepage Duration: Evidence from NYT and WSJ'
-  authors:
-  - Tin Cheuk Leung
-  - Koleman Strumpf
-  year: 2025
-  date: May 2025
-  type: working_paper
-  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4968469
-  pdf_path: /papers/working%20papers/JLE_R2.pdf
-  abstract: "We introduce a duration-based measure of newsroom emphasis based on the time articles remain on digital homepages. Using data on more than 100,000 NYT and WSJ articles and 24 million tweets, we examine how reader-engagement proxies and article slant jointly predict homepage survival. For the NYT, more pro-Democrat articles remain longer after conditioning on demand controls. For the WSJ, analogous slant associations are weaker overall and concentrated in selected subsets. The patterns are consistent with editorial weighting that is di\uFB00icult to reconcile with a purely demand-based interpretation, but they are not definitive causal evidence of supply-side bias. Profit-maximizing outlets may also give greater prominence to content that best retains their core audiences. The results therefore provide a duration-based measurement approach and disciplined descriptive facts for future work on mechanisms."
-  fulltext_hash: 55c340f0f35093f984fb69a726ed575e019fd649cd9c68e4a29e4eccf2e7c794
-  fulltext_excerpt: "Measuring Media Bias Through Homepage Duration:\nEvidence from NYT and WSJ \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nAugust 2026\n\u2217We would like to thank Julia Cag\xE9, Darlene C. Chisholm, Shane Greenstein, Tim Groseclose, Sam\nPeltzman (editor), David Rothschild, Jose De Sousa, seminar participants from APIOS, CESifo Con-\nference on Economics of Digitization, CREED, CUHK, Digital Economy Workshop Rotterdam, HKEA\nBiennial Conference, IIOC, The Econometric Society NASM, Paris Conference on Digital Economics,\nand SEA for their comments, Sarah Bahr for information about the New York Times print deadline,\nAndy Shen for research assistance, Sean Anderson of the WFU HPC Facility for his help on coding, and\nTom Cleveland for sharing his code for the NYT scraper. We also thank Luth Research for providing\nuser-level viewership of individual news articles, and Ground News for sharing Blindspotter data. The\n\
-    usual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\nAbstract\nWe introduce a duration-based measure of newsroom emphasis based on the time\narticles remain on digital homepages. Using data on more than 100,000 NYT and\nWSJ articles and 24 million tweets, we examine how reader-engagement proxies and\narticle slant jointly predict homepage survival. For the NYT, more pro-Democrat\narticles remain longer after conditioning on demand controls. For the WSJ, analo-\ngous slant associations are weaker overall and concentrated in selected subsets. The\npatterns are consistent with editorial weighting that is di\uFB00icult to reconcile with a\npurely demand-based interpretation, but they are not definitive causal evidence\nof supply-side bias. Profit-maximizing outlets may also give greater prominence\nto content that best retains their core audiences.\
-    \ The results therefore provide a\nduration-based measurement approach and disciplined descriptive facts for future\nwork on mechanisms.\nJEL Classification: D22, D72, D83, L82\nKeywords: Media Bias, Media Economics, Social Media, Machine Learning\n2\n\n1. Introduction\nDigital news creates a new margin along which media bias can operate, not only in what is\nwritten, but also in what editors keep prominently displayed and for how long. This paper\nintroduces a novel measurement approach for media bias based on article duration on a\nnewspaper\u2019s digital homepage.1 Homepage stories occupy privileged digital real estate,\nand duration on that page captures an outlet\u2019s allocation of attent"
-  featured: true
-  featured_order: 1
-  status: Accepted at Journal of Law & Economics
-  previous_title: 'Disentangling Demand and Supply of Media Bias: The Case of Newspaper Homepages'
-  links:
-  - label: CESifo Working Paper No. 10890
-    url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4703294
-  slides:
-    label: Slides
-    url: /slides/slides_NASM2024.pdf
-  mentions:
-  - label: Marginal Revolution
-    url: https://marginalrevolution.com/marginalrevolution/2024/02/new-data-on-media-bias.html
-  - label: The Conversation
-    url: https://theconversation.com/is-news-bias-fueled-by-journalists-supplying-slanted-views-or-readers-demanding-them-an-economist-weighs-in-236769
-  - label: WFU News
-    url: https://news.wfu.edu/2024/07/17/disentangling-media-bias/
-  - label: WFDD
-    url: https://www.wfdd.org/story/wake-forest-researchers-find-lack-competition-contributes-news-bias
-  coauthors:
-  - name: Koleman Strumpf
-    url: https://users.wfu.edu/strumpks/
 - id: ssrn-4249510
   title: Quantifying Racial Prejudices with Housing Transaction Data
   authors:
