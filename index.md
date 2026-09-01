@@ -51,7 +51,7 @@ title: Home
   <h2>Featured Working Papers</h2>
   <div class="paper-list">
     {% assign featured = site.data.working_papers | where: 'featured', true | sort: 'featured_order' %}
-    {% for item in featured limit:4 %}
+    {% for item in featured limit:5 %}
     {% assign primary_link = '' %}
     {% if item.show_paper_link != false and item.external_url and item.external_url != '' %}
       {% assign primary_link = item.external_url %}
@@ -108,7 +108,15 @@ title: Home
           {% endif %}
         {% endif %}
       </p>
-      <p class="meta compact-line">{{ item.authors | join: ', ' }}</p>
+      <p class="meta compact-line">
+        {% for author in item.authors %}
+          {% assign author_url = nil %}
+          {% for coauthor in item.coauthors %}
+            {% if coauthor.name == author %}{% assign author_url = coauthor.url %}{% endif %}
+          {% endfor %}
+          {% if author_url %}<a href="{{ author_url }}" target="_blank" rel="noopener">{{ author }}</a>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
       <p class="compact-line">
         <button
           class="abstract-button js-view-abstract"

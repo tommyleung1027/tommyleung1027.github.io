@@ -52,12 +52,15 @@
   fulltext_excerpt: "Digital Social Pressure, Managerial Decision-Making and\nWorker Performance: Evidence from Professional Football\nAndy Chung\nUniversity of Reading\nGlobal Labor Organization\nTin Cheuk Leung\nWake Forest University\nJames Reade\nUniversity of Reading\nAugust 2026\nAbstract\nDigital platforms expose workers and managers to immediate, public, and persistent evaluations\nfrom external audiences, creating a form of social pressure that may shape workplace decisions. We\nexamine whether such digital social pressure predicts subsequent opportunity allocation and worker\nperformance,usingprofessionalfootballasahigh-frequencyempiricalsetting. Welinkplayer-match\ndata from Europe\u2019s five major leagues to post-match Twitter commentary and construct measures\nof negative sentiment, toxicity, and racial abuse. Comparing players with themselves over time and\nteammates in the same current match, we find that greater negative sentiment is associated with a\nlower probability\
     \ of appearing in the team\u2019s next match. Toxicity shows a similar but less stable\nassociation, while racial-abuse intensity is imprecisely estimated when the measures enter jointly.\nBy contrast, associations with performance conditional on a subsequent appearance are small and\nimprecise. Overall, the findings suggest that digital social pressure is reflected more strongly in the\nallocation of subsequent opportunities than in worker performance, showing how public evaluations\ngeneratedoutsideformalorganizationalboundariescanbecomepartofthereputationalenvironment\nsurrounding internal managerial decisions.\nKeywords:digital social pressure, online criticism, managerial decision-making, worker performance,\nsocial media, professional football, racial abuse\nJEL codes:J24, M54, D91, Z22, J71\n\n1 Introduction\nPublic evaluations can be associated with workplace outcomes even when the evaluators have no formal\nauthority. Theymayalterworkers\u2019incentivesandmanagers\u2019willingnesstoallocatefutureopportunities.\n\
     Economic research shows that social approval and reputational concerns shape conformity (Bernheim,\n1994),peermonitoringisrelatedtoworkplaceeffortandproductivity(MasandMoretti,2009;Bandiera\netal.,2010;Cornelissenetal.,2017),andsocialpressurechangescharitablegivingandprofessionalde-\ncisions(DellaVignaetal.,2012;Garicanoetal.,2005). Thisliteraturegenerallyexaminespressurefrom\npeers, supervisors, clients, or face-to-face audiences. Less is known about whether public evaluations\nproducedoutsideanorganizationpredicttheoutcomesoftheindividualworkersbeingevaluated.\nOnline platforms make this question especially salient. They distribute u"
-  featured: false
+  featured: true
+  featured_order: 1.5
   aliases:
   - Digital Social Pressure
   coauthors:
   - name: Andy Chung
+    url: https://sites.google.com/view/andychung/home?authuser=0
   - name: James Reade
+    url: https://sites.google.com/site/jjamesreade/
 - id: wp-dissecting-netflix-self-preferencing
   title: 'Dissecting Netflix''s Self-Preferencing: Evidence from Viewer-Level Data'
   authors:
