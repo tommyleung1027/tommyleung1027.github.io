@@ -12,7 +12,7 @@ permalink: /research/
     id="research-filter"
     type="search"
     placeholder="e.g. housing, 2025, Strumpf"
-    data-index-url="{{ '/assets/search/papers_index.json' | relative_url }}"
+    data-index-url="{{ '/assets/search/papers_index.json' | relative_url }}?v={{ site.time | date: '%s' }}"
   >
 </div>
 
@@ -205,4 +205,4 @@ permalink: /research/
   </ul>
 </section>
 
-<script src="{{ '/assets/js/research-filter.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/research-filter.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
