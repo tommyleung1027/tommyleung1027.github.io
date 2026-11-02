@@ -50,7 +50,7 @@ title: Home
 <section>
   <h2>Featured Working Papers</h2>
   <div class="paper-list">
-    {% assign featured = site.data.working_papers | where: 'featured', true | sort: 'featured_order' %}
+    {% assign featured = site.data.working_papers | where: 'featured', true %}
     {% for item in featured limit:5 %}
     {% assign primary_link = '' %}
     {% if item.show_paper_link != false and item.external_url and item.external_url != '' %}

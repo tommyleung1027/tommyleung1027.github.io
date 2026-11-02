@@ -50,7 +50,7 @@ Optional flags:
 
 - `abstract_source: manual` preserves the exact canonical abstract across PDF replacements and `--refresh`.
 - `slides: {label: Slides, url: /slides/example.pdf}` supplies the shared slides link on both pages.
-- `featured: true` on working papers to show on the homepage Featured Working Papers section.
+- `featured: true` on working papers to show on the homepage Featured Working Papers section. The homepage shows the five newest featured papers in the same newest-first order as the Research page, maintained by `make update-papers`.
 
 ### Adding a new paper
 
