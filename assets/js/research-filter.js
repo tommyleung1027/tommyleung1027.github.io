@@ -13,9 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const applyFilter = () => {
+    const query = input.value.trim().toLowerCase();
+    items.forEach((item) => {
+      const paperId = item.getAttribute('data-paper-id') || '';
+      const fallback = item.getAttribute('data-search') || '';
+      const text = String(searchById.get(paperId) || fallback).toLowerCase();
+      item.style.display = text.includes(query) ? '' : 'none';
+    });
+  };
+
   const indexUrl = input.dataset.indexUrl;
   if (indexUrl) {
-    fetch(indexUrl)
+    fetch(indexUrl, { cache: 'no-cache' })
       .then((response) => (response.ok ? response.json() : []))
       .then((rows) => {
         if (!Array.isArray(rows)) return;
@@ -27,19 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
             searchById.set(id, text);
           }
         });
+        applyFilter();
       })
       .catch(() => {
         // Keep fallback behavior if search index is unavailable.
       });
   }
 
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
-    items.forEach((item) => {
-      const paperId = item.getAttribute('data-paper-id') || '';
-      const fallback = item.getAttribute('data-search') || '';
-      const text = String(searchById.get(paperId) || fallback).toLowerCase();
-      item.style.display = text.includes(query) ? '' : 'none';
-    });
-  });
+  input.addEventListener('input', applyFilter);
 });
