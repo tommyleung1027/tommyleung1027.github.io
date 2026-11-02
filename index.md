@@ -76,10 +76,13 @@ title: Home
       {% elsif item.year and item.year != '' %}
       <p class="meta compact-line">{{ item.year }}</p>
       {% endif %}
-      {% if item.status and item.status != '' %}
+      {% if item.status and item.status != '' and item.status != 'Under Review' %}
       <p class="paper-status compact-line">{{ item.status }}</p>
       {% endif %}
       <p class="inline-links compact-line">
+        {% if item.status == 'Under Review' %}
+        <span class="badge">{{ item.status }}</span>
+        {% endif %}
         {% for l in item.links %}
           {% assign hide_link = false %}
           {% if item.show_pdf == false and l.url == item.pdf_path %}

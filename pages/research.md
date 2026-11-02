@@ -56,11 +56,14 @@ permalink: /research/
       <p class="meta">{{ item.authors | join: ', ' }}</p>
       {% endif %}
 
-      {% if item.status and item.status != '' %}
+      {% if item.status and item.status != '' and item.status != 'Under Review' %}
       <p class="paper-status">{{ item.status }}</p>
       {% endif %}
 
       <p class="inline-links">
+        {% if item.status == 'Under Review' %}
+        <span class="badge">{{ item.status }}</span>
+        {% endif %}
         {% for l in item.links %}
           {% assign hide_link = false %}
           {% if item.show_pdf == false and l.url == item.pdf_path %}
