@@ -6,7 +6,7 @@ with PDFs under:
   - papers/working papers/
   - papers/publications/
 
-It updates abstracts and excerpts incrementally using `fulltext_hash`, writes an
+It updates abstracts, excerpts, and full-text search incrementally using `fulltext_hash`, writes an
 autodraft file for unmatched PDFs, and generates `assets/search/papers_index.json`.
 """
 
@@ -41,8 +41,6 @@ AUTHOR_SELF = "Tin Cheuk Leung"
 DEFAULT_ABSTRACT = "Abstract unavailable. Please use the paper links."
 ABSTRACT_MAX_CHARS = 2200
 EXCERPT_MAX_CHARS = 2600
-EXCERPT_SCAN_PAGES = 8
-ABSTRACT_SCAN_PAGES = 12
 
 MONTH_MAP = {
     "jan": 1,
@@ -77,7 +75,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--refresh",
         action="store_true",
-        help="Re-extract abstract/fulltext excerpt even when fulltext_hash is unchanged.",
+        help="Re-extract PDF text even when fulltext_hash is unchanged; preserve manual abstracts.",
     )
     return parser.parse_args()
 
@@ -203,10 +201,10 @@ def normalize_abstract_spacing(text: str) -> str:
     return joined
 
 
-def read_pdf_text(path: Path, max_pages: int) -> str:
+def read_pdf_text(path: Path, max_pages: Optional[int] = None) -> str:
     reader = PdfReader(str(path))
     parts: List[str] = []
-    page_limit = min(max_pages, len(reader.pages))
+    page_limit = len(reader.pages) if max_pages is None else min(max_pages, len(reader.pages))
     for idx in range(page_limit):
         try:
             page_text = reader.pages[idx].extract_text() or ""
@@ -435,6 +433,7 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
         if "featured" in raw:
             item["featured"] = bool(raw.get("featured"))
         for optional in (
+            "abstract_source",
             "featured_order",
             "status",
             "previous_title",
@@ -592,6 +591,7 @@ def update_entries_for_type(
     paper_type: str,
     entries: List[Dict[str, Any]],
     refresh: bool,
+    fulltext_cache: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
     folder = PAPER_DIRS[paper_type]
     pdf_files = sorted(folder.glob("*.pdf"), key=lambda p: p.name.lower())
@@ -615,6 +615,12 @@ def update_entries_for_type(
     for pdf_path in pdf_files:
         entry = resolve_match(pdf_path, paper_type, by_title, by_pdf_stem, by_id, entries)
         pdf_web_path = pdf_to_web_path(pdf_path)
+        if entry and entry.get("pdf_path") != pdf_web_path:
+            selected_pdf = ROOT / unquote(str(entry.get("pdf_path", ""))).lstrip("/")
+            # Retained older versions must not replace an explicitly selected PDF.
+            if selected_pdf.is_file():
+                skipped += 1
+                continue
         file_hash = sha256_file(pdf_path)
 
         inferred_year = infer_year_from_text(pdf_path.stem)
@@ -657,11 +663,15 @@ def update_entries_for_type(
         excerpt_now = str(entry.get("fulltext_excerpt", "")).strip()
         needs_extract = refresh or not old_hash or old_hash != file_hash or not abstract_now or not excerpt_now
         if needs_extract:
-            text_for_abstract = read_pdf_text(pdf_path, max_pages=ABSTRACT_SCAN_PAGES)
-            text_for_excerpt = read_pdf_text(pdf_path, max_pages=EXCERPT_SCAN_PAGES)
-            entry["abstract"] = extract_abstract(text_for_abstract)
-            entry["fulltext_excerpt"] = extract_excerpt(text_for_excerpt)
+            fulltext = read_pdf_text(pdf_path)
+            if entry.get("abstract_source") != "manual":
+                entry["abstract"] = extract_abstract(fulltext)
+            entry["fulltext_excerpt"] = extract_excerpt(fulltext)
             entry["fulltext_hash"] = file_hash
+            fulltext_cache[entry["id"]] = {
+                "fulltext_hash": file_hash,
+                "fulltext": fulltext,
+            }
             changed = True
         else:
             skipped += 1
@@ -680,7 +690,10 @@ def update_entries_for_type(
     }
 
 
-def build_search_index(all_entries: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def build_search_index(
+    all_entries: Iterable[Dict[str, Any]],
+    fulltext_cache: Dict[str, Dict[str, Any]],
+) -> List[Dict[str, Any]]:
     index: List[Dict[str, Any]] = []
     for item in all_entries:
         title = str(item.get("title", "")).strip()
@@ -693,10 +706,17 @@ def build_search_index(all_entries: Iterable[Dict[str, Any]]) -> List[Dict[str, 
         excerpt = str(item.get("fulltext_excerpt", "")).strip()
         previous_title = str(item.get("previous_title", "")).strip()
         aliases = ensure_text_list(item.get("aliases"))
+        cached = fulltext_cache.get(item["id"], {})
+        fulltext = ""
+        if cached.get("fulltext_hash") == item.get("fulltext_hash"):
+            fulltext = str(cached.get("fulltext", ""))
+        # Older entries retain their excerpt until their next PDF update/refresh.
+        search_body = re.sub(r"(?<=[a-z])-\n(?=[a-z])", "", fulltext)
+        search_body = re.sub(r"\s+", " ", search_body).strip() if fulltext else excerpt
 
         searchable_text = normalize_space(
             " ".join(
-                [title, previous_title, " ".join(aliases), " ".join(authors), year, date, abstract, excerpt]
+                [title, previous_title, " ".join(aliases), " ".join(authors), year, date, abstract, search_body]
             )
         )
         row = {
@@ -716,6 +736,9 @@ def build_search_index(all_entries: Iterable[Dict[str, Any]]) -> List[Dict[str, 
             row["previous_title"] = previous_title
         if aliases:
             row["aliases"] = aliases
+        if fulltext:
+            row["fulltext_hash"] = item["fulltext_hash"]
+            row["fulltext"] = fulltext
         index.append(row)
     return index
 
@@ -769,9 +792,12 @@ def main() -> int:
     args = parse_args()
 
     working_entries, publication_entries, bootstrapped = load_or_bootstrap_entries()
+    # Cache complete PDF text in the generated index, keeping canonical metadata small.
+    previous_index = json.loads(SEARCH_INDEX_FILE.read_text(encoding="utf-8")) if SEARCH_INDEX_FILE.exists() else []
+    fulltext_cache = {row["id"]: row for row in previous_index if row.get("fulltext")}
 
-    working_result = update_entries_for_type("working_paper", working_entries, refresh=args.refresh)
-    publication_result = update_entries_for_type("publication", publication_entries, refresh=args.refresh)
+    working_result = update_entries_for_type("working_paper", working_entries, refresh=args.refresh, fulltext_cache=fulltext_cache)
+    publication_result = update_entries_for_type("publication", publication_entries, refresh=args.refresh, fulltext_cache=fulltext_cache)
 
     dump_yaml(WORKING_FILE, working_result["entries"])
     dump_yaml(PUBLICATIONS_FILE, publication_result["entries"])
@@ -779,7 +805,7 @@ def main() -> int:
     unmatched = working_result["unmatched"] + publication_result["unmatched"]
     dump_yaml(AUTODRAFT_FILE, unmatched)
 
-    search_index = build_search_index(working_result["entries"] + publication_result["entries"])
+    search_index = build_search_index(working_result["entries"] + publication_result["entries"], fulltext_cache)
     write_search_index(search_index)
 
     print("Paper index update summary")

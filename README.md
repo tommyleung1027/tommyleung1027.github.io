@@ -42,12 +42,14 @@ Each paper entry in `working_papers.yml` and `publications.yml` includes:
 - `type` (`working_paper` or `publication`)
 - `external_url` (optional)
 - `pdf_path` (optional)
-- `abstract` (auto-generated)
+- `abstract` (auto-generated unless `abstract_source: manual`)
 - `fulltext_hash` (auto-generated)
 - `fulltext_excerpt` (auto-generated)
 
 Optional flags:
 
+- `abstract_source: manual` preserves the exact canonical abstract across PDF replacements and `--refresh`.
+- `slides: {label: Slides, url: /slides/example.pdf}` supplies the shared slides link on both pages.
 - `featured: true` on working papers to show on the homepage Featured Working Papers section.
 
 ### Adding a new paper
@@ -88,6 +90,7 @@ The updater is robust to common filename differences:
 - Unicode punctuation differences
 
 It also uses SHA-256 hashes (`fulltext_hash`) to skip abstract/fulltext extraction when a PDF is unchanged, unless `--refresh` is used.
+An existing explicit `pdf_path` takes precedence over retained older PDFs matching a title or alias.
 
 ## Search index
 
@@ -95,7 +98,7 @@ The generated search index is:
 
 - `/Users/tincheukleung/Dropbox (Personal)/Website/assets/search/papers_index.json`
 
-Each index item includes combined `searchable_text` (`title + authors + year/date + abstract + fulltext_excerpt`) for client-side filtering.
+Each index item includes combined `searchable_text` (`title + authors + year/date + abstract + PDF text`) for client-side filtering. Updated PDFs are read in full, with complete text and its SHA-256 hash cached in the index for subsequent runs. Older unchanged entries retain their existing excerpts until their next PDF replacement or `--refresh`. Canonical metadata stays in `working_papers.yml` and `publications.yml`; both page templates use it directly.
 
 ## Automation on GitHub (optional but enabled)
 

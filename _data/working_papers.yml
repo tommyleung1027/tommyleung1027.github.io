@@ -1,3 +1,30 @@
+- id: ssrn-5853062
+  title: 'How AI Reshapes Human Content Creation: The Case of Wikipedia'
+  authors:
+  - Tin Cheuk Leung
+  - Koleman Strumpf
+  year: 2026
+  date: October 2026
+  type: working_paper
+  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5853062
+  pdf_path: /papers/working%20papers/How%20AI%20Reshapes%20Human%20Content%20Creation-%20The%20Case%20of%20Wikipedia.pdf
+  abstract: "We study how Grokipedia, an AI-generated encyclopedia, affects Wikipedia readership and editing. We compare covered biographies with uncovered biographies in the same field, matched on pre-launch activity and historical characteristics. Over the eight weeks after launch, difference-in-differences estimates imply increases in views and total edits equivalent to 16.2 and 46.5 percent of their pre-launch totals. Lower initial textual similarity predicts larger total-edit responses. Initially more dissimilar pages show more positive subsequent changes in similarity to Grokipedia\u2019s fixed launch-day text, especially where editing is greater. Contributors new to a page account for most of the participation increase, while highly experienced Wikipedians account for the largest share across experience groups. These findings support an inspiration channel: differences in AI-generated content can prompt contributors to revisit and revise Wikipedia entries. AI can therefore stimulate\
+    \ human knowledge production through content supplied on a competing platform."
+  fulltext_hash: 635c4dc435b40f02c7cea56457cc1afcef95a557455c4c8d50c663e969628784
+  fulltext_excerpt: "How AI Reshapes Human Content Creation:\nThe Case of Wikipedia \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nOctober 2026\nAbstract\nWe study how Grokipedia, an AI-generated encyclopedia, affects Wikipedia\nreadership and editing. We compare covered biographies with uncovered biogra-\nphies in the same field, matched on pre-launch activity and historical character-\nistics. Over the eight weeks after launch, difference-in-differences estimates imply\nincreases in views and total edits equivalent to 16.2 and 46.5 percent of their pre-\nlaunch totals. Lower initial textual similarity predicts larger total-edit responses.\nInitially more dissimilar pages show more positive subsequent changes in similarity\nto Grokipedia\u2019s fixed launch-day text, especially where editing is greater. Contrib-\nutors new to a page account for most of the participation increase, while highly\nexperienced Wikipedians account for the\
+    \ largest share across experience groups.\nThese findings support an inspiration channel: differences in AI-generated content\ncan prompt contributors to revisit and revise Wikipedia entries. AI can therefore\nstimulate human knowledge production through content supplied on a competing\nplatform.\nJEL Classification: D83, L82, L86\nKeywords:Wikipedia, Digital Platforms, Artificial Intelligence,\nUser-Generated Content\n\u2217We thank Marit Hinnosaar, Joshua Gans, Shane Greenstein, Ginger Jin, Imke Reimers, Peter Thiel,\nRussell Tsz-Nga Wong and Kai Zhu for their comments. We also thank seminar participants at CREED,\nthe Munich Summer Institute, the University of South Florida, and Wharton\u2019s \u201CAI and the Future\nof Work\u201D Conference. We also thank@lthlnksofor assistance with Grokipedia data. This work re-\nceived support from Wake Forest\u2019s AI Compass and the Institute for Humane Studies under grant no.\nIHS020529. The usual disclaimer applies.\n\u2020Contact: Department\
+    \ of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nGenerative AI increasingly produces content that competes with human knowledge on\nseparate platforms. Does this competition crowd out human contribution or prompt ad-\nditional effort? We study this question through Grokipedia, an AI-generated encyclopedia\nlaunched as a rival to Wikipedia on October 27, 2025.1 The AI-generated content appears\non Grokipedia, while we measure readership, editing and textual changes on Wikipedia.\nGrokipedia thus provides an external source of competing information, rather than an\nAI assistant embedded in edito"
+  featured: true
+  abstract_source: manual
+  featured_order: 3
+  links:
+  - label: Under Review
+  slides:
+    label: Slides
+    url: /slides/Grokipedia_slides.pdf
+  coauthors:
+  - name: Koleman Strumpf
+    url: https://users.wfu.edu/strumpks/
 - id: ssrn-4968469
   title: 'Measuring Media Bias Through Homepage Duration: Evidence from NYT and WSJ'
   authors:
@@ -91,32 +118,6 @@
   - name: Koleman Strumpf
     url: https://users.wfu.edu/strumpks/
   show_pdf: false
-- id: ssrn-5853062
-  title: 'How AI Reshapes Human Content Creation: The Case of Wikipedia'
-  authors:
-  - Tin Cheuk Leung
-  - Koleman Strumpf
-  year: 2026
-  date: Jan 2026
-  type: working_paper
-  external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5853062
-  pdf_path: /papers/working%20papers/How%20AI%20Reshapes%20Human%20Content%20Creation-%20The%20Case%20of%20Wikipedia.pdf
-  abstract: "Generative AI models rely on large volumes of user-generated content (UGC), yet we know little about how AI tools affect the production of that underlying content. We study this question by examining the short-run impact of the introduction of Grokipedia, an AI-generated online encyclopedia operated by xAI, which provides automated entries that could either substitute for human editing or draw in new contributors. We develop a simple theoretical framework in which AI entries can redirect user attention and stimulate human editing through novel framing, yielding ambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million Wikipedia pages of notable individuals, we exploit the fact that only a subset have comparable Grokipedia entries to estimate the causal effect of AI on subsequent human contributions, constructing matched samples of treated and untreated pages within occupational fields. We find a consistent and surprising result:the availability of Grokipedia\
-    \ increases human editing activity. Page views also rise, suggesting that AI entries act as an attention amplifier rather than a pure substitute for Wikipedia content. Exploiting variation in the semantic similarity between Grokipedia entries and their corresponding Wikipedia articles, we further show that pages withlower similarity experiencelargerincreases in editing after Grokipedia\u2019s launch, consistent with the model\u2019s predictions. Taken together, our findings indicate that embedded AI tools can complement\u2014rather than crowd out\u2014voluntary human contributions, highlighting a positive feedback loop between AI features and the data ecosystem that sustains modern AI models."
-  fulltext_hash: 71c97fee8f0b5ec53f05813f44355097c8b46015a86a3fc47f7292991f841429
-  fulltext_excerpt: "How AI Reshapes Human Content Creation:\nThe Case of Wikipedia \u2217\nTin Cheuk Leung \u2020\nWake Forest University\nKoleman Strumpf \u2021\nWake Forest University\nJanuary 2026\nAbstract\nGenerative AI models rely on large volumes of user-generated content (UGC), yet\nwe know little about how AI tools affect the production of that underlying content.\nWe study this question by examining the short-run impact of the introduction of\nGrokipedia, an AI-generated online encyclopedia operated by xAI, which provides\nautomated entries that could either substitute for human editing or draw in new\ncontributors. We develop a simple theoretical framework in which AI entries can\nredirect user attention and stimulate human editing through novel framing, yielding\nambiguous effects on UGC ex ante. Using a new panel dataset covering 1.4 million\nWikipedia pages of notable individuals, we exploit the fact that only a subset have\ncomparable Grokipedia entries to estimate the causal\
-    \ effect of AI on subsequent\nhuman contributions, constructing matched samples of treated and untreated pages\nwithin occupational fields. We find a consistent and surprising result:the availability\nof Grokipedia increases human editing activity. Page views also rise, suggesting that\nAI entries act as an attention amplifier rather than a pure substitute for Wikipedia\ncontent. Exploiting variation in the semantic similarity between Grokipedia entries\nand their corresponding Wikipedia articles, we further show that pages withlower\nsimilarity experiencelargerincreases in editing after Grokipedia\u2019s launch, consistent\nwith the model\u2019s predictions. Taken together, our findings indicate that embedded\nAI tools can complement\u2014rather than crowd out\u2014voluntary human contributions,\nhighlighting a positive feedback loop between AI features and the data ecosystem\nthat sustains modern AI models.\nJEL Classification: D83, L82, L86\nKeywords:Wikipedia, Digital Platforms,\
-    \ Artificial Intelligence, User-Generated Con-\ntent\n\u2217We thank Joshua Gans, Marit Hinnosaar, Shane Greenstein, Imke Reimers, Peter Thiel and Russell\nTsz-Nga Wong for their comments. We also thank@lthlnksofor assistance with Grokipedia data. The\nusual disclaimer applies.\n\u2020Contact: Department of Economics, Kirby Hall, Wake Forest University, Box 7505, Winston-Salem,\nNC 27109. Email: leungtc@wfu.edu\n\u2021Email: strumpks@wfu.edu\n1\n\n1 Introduction\nGenerative artificial intelligence (GAI) systems rely fundamentally on vast amounts of\nuser-generated content (UGC). Large language models are trained primarily on text drawn\nfrom the open internet, including encyclopedias, discussion forums,"
-  featured: true
-  featured_order: 3
-  links:
-  - label: Under Review
-  slides:
-    label: AI-generated slides
-    url: /slides/Grokipedia_slides_NotebookLM.pdf
-  coauthors:
-  - name: Koleman Strumpf
-    url: https://users.wfu.edu/strumpks/
 - id: ssrn-5923585
   title: 'Experimentation Without Exit: Multihoming and Platform Persistence in #EconTwitter'
   authors:

@@ -14,5 +14,6 @@ serve:
 
 test:
 	python3 -m py_compile scripts/build_paper_index.py
+	python3 -m unittest discover -s tests
 	python3 scripts/build_paper_index.py
 	$(BUNDLE_CMD) exec jekyll build
