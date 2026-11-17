@@ -1,3 +1,34 @@
+- id: ssrn-5923585
+  title: 'Migration Talk and Platform Overlap: Network Exposure in #EconTwitter'
+  authors:
+  - Tin Cheuk Leung
+  - Kwok Ping Tsang
+  year: 2026
+  date: '2026'
+  type: publication
+  external_url: https://www.degruyterbrill.com/document/doi/10.1515/rne-2026-0039/html
+  pdf_path: /papers/publications/Migration%20Talk%20and%20Platform%20Overlap.pdf
+  abstract: "How does discussion of an alternative platform relate to participation in an existing professional network? We study Mastodon-related discussion in #EconTwitter after Twitter\u2019s 2022 ownership change. We measure potential exposure through retweets of content from sources an economist does not directly follow. Economists who accumulated more exposure posted less on Twitter during October\u2013December, controlling for economist and week fixed effects. We find no comparable decline in #EconTwitter-specific posting. The relationship is more negative among economists who were more central in the community\u2019s pre-episode interaction network. A later snapshot shows that alternative-platform profiles often coexist with Twitter/X profiles. The evidence links migration discussion to posting behavior and platform overlap, but does not establish causal peer effects or platform exit."
+  fulltext_hash: a7c63d92cac9b1cf1bbfd83320ea7a8a8a34426532025302d72466197cace829
+  fulltext_excerpt: "Rev Netw Econ 2026; aop\nTin Cheuk Leung* and Kwok Ping Tsang\nMigration Talk and Platform Overlap:\nNetwork Exposure in #EconTwitter\nhttps://doi.org/10.1515/rne-2026-0039\nReceived June 5, 2026; accepted November 1, 2026; published online November 17, 2026\nAbstract: How does discussion of an alternative platform relate to participation in\nan existing professional network? We study Mastodon-related discussion in #Econ-\nTwitter after Twitter\u2019s 2022 ownership change. We measure potential exposure\nthrough retweets of content from sources an economist does not directly follow.\nEconomists who accumulated more exposure posted less on Twitter during Octo-\nber\u2013December, controlling for economist and week fixed effects. We find no com-\nparable decline in #EconTwitter-specific posting. The relationship is more negative\namong economists who were more central in the community\u2019s pre-episode inter-\naction network. A later snapshot shows that alternative-platform\
+    \ profiles often\ncoexist with Twitter/X profiles. The evidence links migration discussion to post-\ning behavior and platform overlap, but does not establish causal peer effects or\nplatform exit.\nKeywords: platform competition; network exposure; professional communities;\nmultihoming\nJEL Classification: D83; L14; L86; Z13\n1 Introduction\nHow does discussion of Mastodon relate to economists\u2019 participation in Twitter?\nMastodon attracted attention in #EconTwitter around Twitter\u2019s ownership change\nand November 2022 layoffs. We examine whether economists exposed to more of\n*Corresponding author: Tin Cheuk Leung, Wake Forest University, Winston-Salem, USA,\nE-mail: leungtc@wfu.edu\nKwok Ping Tsang, Virginia Tech, Blacksburg, USA, E-mail: byront@vt.edu.\nhttps://orcid.org/0000-0002-0045-6185\nOpen Access. \xA9 2026 the author(s), published by De Gruyter. This work is licensed under the Creative\nCommons Attribution 4.0 International License.\n\n2 \u2014 T. C. Leung and K.\
+    \ P. Tsang\nthat discussion changed their posting and whether they later maintained profiles\non alternative platforms.\nProfessional communities provide a useful setting for studying platform com-\npetition. Users value access to colleagues as well as the features of a platform.\nAn economist may therefore open a Mastodon account while retaining a Twitter\naccount. Network effects and switching costs can explain why competing platforms\ncoexist (Biglaiser et al. 2022; Farrell and Klemperer 2007). Profile overlap alone does\nnot distinguish these frictions.\nWe combine economists\u2019 posting histories with community posts, following\nrelationships, and a later cross-platform collection."
+  previous_titles:
+  - 'Experimentation Without Exit: Multihoming and Platform Persistence in #EconTwitter'
+  - '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
+  links:
+  - label: PDF links
+    url: /papers/publications/Migration%20Talk%20and%20Platform%20Overlap.pdf
+  slides:
+    label: AI-generated slides
+    url: /slides/Twitter_AI_slides.pdf
+  coauthors:
+  - name: Kwok Ping Tsang
+    url: https://sites.google.com/site/byrontkp/
+  journal: Review of Network Economics
+  doi: 10.1515/rne-2026-0039
+  accepted_date: '2026-11-01'
+  published_date: '2026-11-17'
 - id: pub-globalization-and-the-rise-of-action-movies-in-hollywood
   title: Globalization and the Rise of Action Movies in Hollywood,
   authors:

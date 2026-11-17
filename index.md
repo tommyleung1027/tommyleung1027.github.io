@@ -48,6 +48,37 @@ title: Home
 </section>
 
 <section>
+  <h2>Recent Publications</h2>
+  <div class="paper-list">
+    {% for item in site.data.publications limit:1 %}
+    {% assign primary_link = item.external_url %}
+    {% if primary_link == nil or primary_link == '' %}
+      {% assign primary_link = item.pdf_path | relative_url %}
+    {% endif %}
+    <article class="paper-card compact">
+      <h3 class="paper-title">
+        {% if primary_link and primary_link != '' %}
+        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
+        {% else %}
+        {{ item.title | escape }}
+        {% endif %}
+      </h3>
+      {% include publication_details.html paper=item %}
+      {% if item.journal == nil %}
+      <p class="meta compact-line">{{ item.citation | default: item.year | escape }}</p>
+      {% endif %}
+      <p class="inline-links compact-line">
+        {% if item.slides and item.slides.url %}
+        <a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label | default: 'Slides' }}</a>
+        {% endif %}
+        {% include paper_abstract_button.html paper=item url=primary_link %}
+      </p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
   <h2>Featured Working Papers</h2>
   <div class="paper-list">
     {% assign featured = site.data.working_papers | where: 'featured', true %}
@@ -57,10 +88,6 @@ title: Home
       {% assign primary_link = item.external_url %}
     {% elsif item.show_paper_link != false and item.show_pdf != false and item.pdf_path and item.pdf_path != '' %}
       {% assign primary_link = item.pdf_path | relative_url %}
-    {% endif %}
-    {% assign abstract_text = item.abstract %}
-    {% if abstract_text == nil or abstract_text == '' %}
-      {% assign abstract_text = 'Abstract unavailable.' %}
     {% endif %}
     <article class="paper-card compact">
       <h3 class="paper-title">
@@ -121,16 +148,7 @@ title: Home
         {% endfor %}
       </p>
       <p class="compact-line">
-        <button
-          class="abstract-button js-view-abstract"
-          type="button"
-          data-paper-id="{{ item.id | escape }}"
-          data-title="{{ item.title | escape }}"
-          data-abstract="{{ abstract_text | escape }}"
-          data-url="{{ primary_link | escape }}"
-        >
-          View Abstract
-        </button>
+        {% include paper_abstract_button.html paper=item url=primary_link %}
       </p>
     </article>
     {% endfor %}

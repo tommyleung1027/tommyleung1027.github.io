@@ -4,6 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from scripts import build_paper_index as builder
@@ -98,6 +99,51 @@ class PaperUpdateTests(unittest.TestCase):
         with patch.object(builder, "extract_abstract", return_value="Updated automatic abstract"):
             self.update()
         self.assertEqual(self.entry["abstract"], "Updated automatic abstract")
+
+    def test_publication_replaces_working_paper_with_same_id(self):
+        publications = self.root / "publications"
+        publications.mkdir()
+        published_pdf = publications / "Published title.pdf"
+        published_pdf.write_bytes(b"published PDF")
+        metadata = {
+            "WORKING_FILE": self.root / "working.yml",
+            "PUBLICATIONS_FILE": self.root / "publications.yml",
+            "RESEARCH_FILE": self.root / "research.yml",
+            "AUTODRAFT_FILE": self.root / "autodraft.yml",
+            "SEARCH_INDEX_FILE": self.root / "index.json",
+            "PAPER_DIRS": {"working_paper": self.root, "publication": publications},
+        }
+        publication = {
+            "id": self.entry["id"],
+            "title": "Published title",
+            "previous_titles": ["Example: A Paper", "First title"],
+            "year": 2026,
+            "journal": "Example Journal",
+            "doi": "10.0000/example",
+            "pdf_path": builder.pdf_to_web_path(published_pdf),
+        }
+        builder.dump_yaml(metadata["WORKING_FILE"], [self.entry])
+        builder.dump_yaml(metadata["PUBLICATIONS_FILE"], [publication])
+        metadata["SEARCH_INDEX_FILE"].write_text(json.dumps([{
+            "id": self.entry["id"], "fulltext_hash": "old-hash", "fulltext": "Obsolete PDF text",
+        }]))
+
+        with patch.multiple(builder, **metadata), patch.object(
+            builder, "parse_args", return_value=SimpleNamespace(refresh=False)
+        ), patch.object(builder, "infer_year_from_pdf_metadata", return_value=2026), patch.object(
+            builder, "read_pdf_text", return_value=self.text
+        ) as read:
+            builder.main()
+            read.assert_called_once_with(published_pdf)
+
+        self.assertEqual(builder.load_yaml(metadata["WORKING_FILE"], None), [])
+        self.assertEqual(builder.load_yaml(metadata["AUTODRAFT_FILE"], None), [])
+        row, = json.loads(metadata["SEARCH_INDEX_FILE"].read_text())
+        self.assertEqual((row["id"], row["type"]), (publication["id"], "publication"))
+        self.assertEqual(row["fulltext_hash"], builder.sha256_file(published_pdf))
+        for term in ["Example: A Paper", "First title", "Example Journal", "10.0000/example", "late-page"]:
+            self.assertIn(term, row["searchable_text"])
+        self.assertNotIn("Obsolete PDF text", row["searchable_text"])
 
 
 if __name__ == "__main__":

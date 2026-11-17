@@ -1,0 +1,10 @@
+<button
+  class="abstract-button js-view-abstract"
+  type="button"
+  data-paper-id="{{ include.paper.id | escape }}"
+  data-title="{{ include.paper.title | escape }}"
+  data-abstract="{{ include.paper.abstract | default: 'Abstract unavailable.' | escape }}"
+  data-url="{{ include.url | escape }}"
+>
+  View Abstract
+</button>

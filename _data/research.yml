@@ -1,21 +1,4 @@
 working_papers:
-- title: 'Experimentation Without Exit: Multihoming and Platform Persistence in #EconTwitter'
-  previous_title: '#EconTwitter and Elon Musk: Anatomy of a Failed Exodus'
-  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5923585
-  month: Dec
-  year: 2025
-  status: 'R&R'
-  coauthors:
-  - name: Kwok Ping Tsang
-    url: https://sites.google.com/site/byrontkp/
-  slides:
-    label: AI-generated slides
-    url: /slides/Twitter_AI_slides.pdf
-  featured: true
-  featured_order: 4
-  paper_id: ssrn-5923585
-  abstract: |-
-    We study the attempted migration of the #EconTwitter community from Twitter/X to Mastodon following Elon Musk's acquisition of the platform. Leveraging a dataset of 4.3 million tweets from over 2,000 economists---including detailed records of their weekly activity and network-mediated exposure to peers' Mastodon-related retweets---we examine how peer discussions relate to platform engagement. In a difference-in-differences framework, we estimate that greater exposure to Mastodon-related discussions is followed by a short-run decline in activity on Twitter/X. However, this relationship attenuates substantially when we control for economist fixed effects or examine longer-run behavior. Two years later, economists with higher Mastodon exposure are somewhat more likely to multi-home across platforms but only marginally less active on Twitter/X. These findings highlight the strength of network effects and the difficulty of disrupting incumbent platforms, even during periods of widespread discontent.
 - title: An Empirical Decomposition of Information vs Sentiment Shifts in Advertising
   url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5297093
   month: Jun

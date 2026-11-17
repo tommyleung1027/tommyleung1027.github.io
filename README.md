@@ -49,6 +49,8 @@ Each paper entry in `working_papers.yml` and `publications.yml` includes:
 Optional flags:
 
 - `abstract_source: manual` preserves the exact canonical abstract across PDF replacements and `--refresh`.
+- `previous_titles` lists former titles, newest first. Entries with one former title can still use `previous_title`.
+- Publications can specify `journal`, `doi`, `accepted_date`, and `published_date`. Use ISO dates for acceptance and online publication.
 - `slides: {label: Slides, url: /slides/example.pdf}` supplies the shared slides link on both pages.
 - `featured: true` on working papers to show on the homepage Featured Working Papers section. The homepage shows the five newest featured papers in the same newest-first order as the Research page, maintained by `make update-papers`.
 
@@ -79,6 +81,8 @@ Optional flags:
    make update-papers
    ```
 3. Commit and push.
+
+When publishing a working paper, move its entry to `publications.yml` with the same ID, change its type to `publication`, and point `pdf_path` to the published PDF. Remove the working-paper status and featured fields. A retained draft whose filename matches a previous title is skipped by the updater.
 
 ### Notes on matching
 

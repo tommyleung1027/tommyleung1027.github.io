@@ -19,7 +19,7 @@ import re
 import unicodedata
 from copy import deepcopy
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Collection, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import quote, unquote
 
 import yaml
@@ -130,11 +130,12 @@ def ensure_text_list(value: Any) -> List[str]:
     return []
 
 
+def previous_titles(item: Dict[str, Any]) -> List[str]:
+    return ensure_text_list(item.get("previous_titles")) or ensure_text_list(item.get("previous_title"))
+
+
 def metadata_title_variants(item: Dict[str, Any]) -> List[str]:
-    variants = [
-        str(item.get("title", "")).strip(),
-        str(item.get("previous_title", "")).strip(),
-    ]
+    variants = [str(item.get("title", "")).strip(), *previous_titles(item)]
     variants.extend(ensure_text_list(item.get("aliases")))
     return list(dict.fromkeys(value for value in variants if value))
 
@@ -175,13 +176,18 @@ def normalize_space(text: str) -> str:
     return text.strip()
 
 
+def dehyphenate_pdf_lines(text: str) -> str:
+    text = re.sub(r"(?<=[a-z])-\n(?=[a-z])", "", text)
+    return re.sub(r"(#\w+)-\n(?=[A-Z])", r"\1", text)
+
+
 def normalize_abstract_spacing(text: str) -> str:
     text = normalize_space(text)
     if not text:
         return ""
 
     # Fix line-break hyphenation from PDF extraction.
-    text = re.sub(r"(?<=[a-z])-\n(?=[a-z])", "", text)
+    text = dehyphenate_pdf_lines(text)
     text = re.sub(r"(?<=[a-z])-\s+(?=[a-z])", "", text)
 
     # Collapse PDF line wrapping into natural sentence spacing.
@@ -212,7 +218,8 @@ def read_pdf_text(path: Path, max_pages: Optional[int] = None) -> str:
             page_text = ""
         if page_text:
             parts.append(page_text)
-    return normalize_space("\n\n".join(parts))
+    text = re.sub(r"[\ufb00-\ufb06]", lambda match: unicodedata.normalize("NFKC", match[0]), "\n\n".join(parts))
+    return normalize_space(text)
 
 
 def extract_abstract(text: str) -> str:
@@ -437,12 +444,17 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
             "featured_order",
             "status",
             "previous_title",
+            "previous_titles",
             "aliases",
             "links",
             "slides",
             "mentions",
             "coauthors",
             "citation",
+            "journal",
+            "doi",
+            "accepted_date",
+            "published_date",
             "show_pdf",
             "show_paper_link",
         ):
@@ -592,6 +604,7 @@ def update_entries_for_type(
     entries: List[Dict[str, Any]],
     refresh: bool,
     fulltext_cache: Dict[str, Dict[str, Any]],
+    published_title_keys: Collection[str] = (),
 ) -> Dict[str, Any]:
     folder = PAPER_DIRS[paper_type]
     pdf_files = sorted(folder.glob("*.pdf"), key=lambda p: p.name.lower())
@@ -614,6 +627,10 @@ def update_entries_for_type(
 
     for pdf_path in pdf_files:
         entry = resolve_match(pdf_path, paper_type, by_title, by_pdf_stem, by_id, entries)
+        # A retained working-paper PDF can match a publication's title history.
+        if entry is None and any(key in published_title_keys for key in title_match_keys(pdf_path.stem)):
+            skipped += 1
+            continue
         pdf_web_path = pdf_to_web_path(pdf_path)
         if entry and entry.get("pdf_path") != pdf_web_path:
             selected_pdf = ROOT / unquote(str(entry.get("pdf_path", ""))).lstrip("/")
@@ -704,19 +721,21 @@ def build_search_index(
         date = str(item.get("date", "")).strip()
         abstract = str(item.get("abstract", "")).strip()
         excerpt = str(item.get("fulltext_excerpt", "")).strip()
-        previous_title = str(item.get("previous_title", "")).strip()
+        title_history = previous_titles(item)
         aliases = ensure_text_list(item.get("aliases"))
+        journal = str(item.get("journal", "")).strip()
+        doi = str(item.get("doi", "")).strip()
         cached = fulltext_cache.get(item["id"], {})
         fulltext = ""
         if cached.get("fulltext_hash") == item.get("fulltext_hash"):
             fulltext = str(cached.get("fulltext", ""))
         # Older entries retain their excerpt until their next PDF update/refresh.
-        search_body = re.sub(r"(?<=[a-z])-\n(?=[a-z])", "", fulltext)
+        search_body = dehyphenate_pdf_lines(fulltext)
         search_body = re.sub(r"\s+", " ", search_body).strip() if fulltext else excerpt
 
         searchable_text = normalize_space(
             " ".join(
-                [title, previous_title, " ".join(aliases), " ".join(authors), year, date, abstract, search_body]
+                [title, *title_history, *aliases, *authors, year, date, journal, doi, abstract, search_body]
             )
         )
         row = {
@@ -732,8 +751,15 @@ def build_search_index(
             "fulltext_excerpt": excerpt,
             "searchable_text": searchable_text,
         }
-        if previous_title:
-            row["previous_title"] = previous_title
+        if title_history:
+            if item.get("previous_titles"):
+                row["previous_titles"] = title_history
+            else:
+                row["previous_title"] = title_history[0]
+        if journal:
+            row["journal"] = journal
+        if doi:
+            row["doi"] = doi
         if aliases:
             row["aliases"] = aliases
         if fulltext:
@@ -751,13 +777,23 @@ def write_search_index(index: List[Dict[str, Any]]) -> None:
 
 
 def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], bool]:
-    created = False
     working = load_yaml(WORKING_FILE, None)
     publications = load_yaml(PUBLICATIONS_FILE, None)
+    bootstrap_working = not isinstance(working, list)
+    bootstrap_publications = not isinstance(publications, list)
+    if bootstrap_working or bootstrap_publications:
+        boot_working, boot_publications = bootstrap_from_research()
+        if bootstrap_working:
+            working = boot_working
+        if bootstrap_publications:
+            publications = boot_publications
 
-    if isinstance(working, list) and isinstance(publications, list):
-        working_entries = ensure_schema(working, "working_paper")
-        publication_entries = ensure_schema(publications, "publication")
+    publication_entries = ensure_schema(publications, "publication")
+    publication_ids = {item["id"] for item in publication_entries}
+    working_entries = [
+        item for item in ensure_schema(working, "working_paper") if item["id"] not in publication_ids
+    ]
+    if not bootstrap_working:
         enrich_from_research(
             working_entries,
             section="working_papers",
@@ -765,6 +801,7 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
                 "featured_order",
                 "status",
                 "previous_title",
+                "previous_titles",
                 "aliases",
                 "links",
                 "slides",
@@ -772,20 +809,14 @@ def load_or_bootstrap_entries() -> Tuple[List[Dict[str, Any]], List[Dict[str, An
                 "coauthors",
             ],
         )
+    if not bootstrap_publications:
         enrich_from_research(
             publication_entries,
             section="publications",
             optional_keys=["citation", "links"],
         )
-        enforce_publication_pdf_links(publication_entries)
-        return (working_entries, publication_entries, created)
-
-    boot_working, boot_publications = bootstrap_from_research()
-    created = True
-    working_entries = ensure_schema(boot_working, "working_paper")
-    publication_entries = ensure_schema(boot_publications, "publication")
     enforce_publication_pdf_links(publication_entries)
-    return (working_entries, publication_entries, created)
+    return working_entries, publication_entries, bootstrap_working or bootstrap_publications
 
 
 def main() -> int:
@@ -796,7 +827,15 @@ def main() -> int:
     previous_index = json.loads(SEARCH_INDEX_FILE.read_text(encoding="utf-8")) if SEARCH_INDEX_FILE.exists() else []
     fulltext_cache = {row["id"]: row for row in previous_index if row.get("fulltext")}
 
-    working_result = update_entries_for_type("working_paper", working_entries, refresh=args.refresh, fulltext_cache=fulltext_cache)
+    published_title_keys = {
+        key
+        for item in publication_entries
+        for title in previous_titles(item)
+        for key in title_match_keys(title)
+    }
+    working_result = update_entries_for_type(
+        "working_paper", working_entries, args.refresh, fulltext_cache, published_title_keys
+    )
     publication_result = update_entries_for_type("publication", publication_entries, refresh=args.refresh, fulltext_cache=fulltext_cache)
 
     dump_yaml(WORKING_FILE, working_result["entries"])

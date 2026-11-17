@@ -1,3 +1,8 @@
-{% if include.paper.previous_title and include.paper.previous_title != '' %}
-<p class="paper-previous-title">Previous title: <em>{{ include.paper.previous_title }}</em></p>
+{% if include.paper.previous_titles and include.paper.previous_titles.size > 0 %}
+<p class="paper-previous-title">
+  Previously titled:
+  {% for title in include.paper.previous_titles %}<em>{{ title | escape }}</em>{% unless forloop.last %}; {% endunless %}{% endfor %}
+</p>
+{% elsif include.paper.previous_title and include.paper.previous_title != '' %}
+<p class="paper-previous-title">Previous title: <em>{{ include.paper.previous_title | escape }}</em></p>
 {% endif %}

@@ -26,14 +26,11 @@ permalink: /research/
     {% elsif item.show_paper_link != false and item.show_pdf != false and item.pdf_path and item.pdf_path != '' %}
       {% assign primary_link = item.pdf_path | relative_url %}
     {% endif %}
-    {% assign abstract_text = item.abstract %}
-    {% if abstract_text == nil or abstract_text == '' %}
-      {% assign abstract_text = 'Abstract unavailable.' %}
-    {% endif %}
+    {% assign title_history = item.previous_titles | join: ' ' | default: item.previous_title %}
     <li
       class="research-item"
       data-paper-id="{{ item.id | escape }}"
-      data-search="{{ item.title | escape }} {{ item.previous_title | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
+      data-search="{{ item.title | escape }} {{ title_history | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
     >
       <p>
         {% if primary_link and primary_link != '' %}
@@ -86,16 +83,7 @@ permalink: /research/
           <a class="badge" href="{{ m.url }}" target="_blank" rel="noopener">{{ m.label }}</a>
           {% endif %}
         {% endfor %}
-        <button
-          class="abstract-button js-view-abstract"
-          type="button"
-          data-paper-id="{{ item.id | escape }}"
-          data-title="{{ item.title | escape }}"
-          data-abstract="{{ abstract_text | escape }}"
-          data-url="{{ primary_link | escape }}"
-        >
-          View Abstract
-        </button>
+        {% include paper_abstract_button.html paper=item url=primary_link %}
       </p>
     </li>
     {% endfor %}
@@ -119,65 +107,46 @@ permalink: /research/
     {% if primary_link == nil or primary_link == '' %}
       {% assign primary_link = item.pdf_path | relative_url %}
     {% endif %}
-    {% assign abstract_text = item.abstract %}
-    {% if abstract_text == nil or abstract_text == '' %}
-      {% assign abstract_text = 'Abstract unavailable.' %}
-    {% endif %}
+    {% assign title_history = item.previous_titles | join: ' ' | default: item.previous_title %}
     <li
       class="research-item"
       data-paper-id="{{ item.id | escape }}"
-      data-search="{{ item.title | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }}"
+      data-search="{{ item.title | escape }} {{ title_history | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }} {{ item.journal | escape }} {{ item.doi | escape }} {{ item.abstract | escape }}"
     >
       {% if item.citation and item.citation != '' %}
       <p>{{ item.citation }}</p>
       {% else %}
       <p>
         {% if primary_link and primary_link != '' %}
-        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title }}</a>
+        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
         {% else %}
-        {{ item.title }}
+        {{ item.title | escape }}
         {% endif %}
-        {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
+        {% unless item.journal %}
+          {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
+        {% endunless %}
       </p>
       {% endif %}
 
-      {% if item.links and item.links.size > 0 %}
+      {% include publication_details.html paper=item %}
+
       <p class="inline-links">
-        {% for l in item.links %}
-          {% if l.url %}
-          <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
-          {% else %}
-          <span class="badge">{{ l.label }}</span>
-          {% endif %}
-        {% endfor %}
-        <button
-          class="abstract-button js-view-abstract"
-          type="button"
-          data-paper-id="{{ item.id | escape }}"
-          data-title="{{ item.title | escape }}"
-          data-abstract="{{ abstract_text | escape }}"
-          data-url="{{ primary_link | escape }}"
-        >
-          View Abstract
-        </button>
-      </p>
-      {% else %}
-      <p class="inline-links">
-        {% if primary_link and primary_link != '' %}
-        <a href="{{ primary_link }}" target="_blank" rel="noopener">Paper Link</a>
+        {% if item.links and item.links.size > 0 %}
+          {% for l in item.links %}
+            {% if l.url %}
+            <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>
+            {% else %}
+            <span class="badge">{{ l.label }}</span>
+            {% endif %}
+          {% endfor %}
+        {% elsif primary_link and primary_link != '' %}
+          <a href="{{ primary_link }}" target="_blank" rel="noopener">Paper Link</a>
         {% endif %}
-        <button
-          class="abstract-button js-view-abstract"
-          type="button"
-          data-paper-id="{{ item.id | escape }}"
-          data-title="{{ item.title | escape }}"
-          data-abstract="{{ abstract_text | escape }}"
-          data-url="{{ primary_link | escape }}"
-        >
-          View Abstract
-        </button>
+        {% if item.slides and item.slides.url %}
+          <a href="{{ item.slides.url }}" target="_blank" rel="noopener">{{ item.slides.label | default: 'Slides' }}</a>
+        {% endif %}
+        {% include paper_abstract_button.html paper=item url=primary_link %}
       </p>
-      {% endif %}
     </li>
     {% endfor %}
   </ol>
