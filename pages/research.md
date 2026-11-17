@@ -133,7 +133,7 @@ permalink: /research/
 
       <p class="inline-links">
         {% if item.doi and item.doi != '' %}
-          <a href="https://doi.org/{{ item.doi | escape }}" target="_blank" rel="noopener">DOI {{ item.doi | escape }}</a>
+          <a href="https://doi.org/{{ item.doi | escape }}" target="_blank" rel="noopener">Journal</a>
         {% endif %}
         {% if item.links and item.links.size > 0 %}
           {% for l in item.links %}
