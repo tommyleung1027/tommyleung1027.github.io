@@ -451,6 +451,7 @@ def ensure_schema(entries: Iterable[Dict[str, Any]], paper_type: str) -> List[Di
             "mentions",
             "coauthors",
             "citation",
+            "citation_authors",
             "journal",
             "doi",
             "accepted_date",

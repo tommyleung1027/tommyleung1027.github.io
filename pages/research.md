@@ -113,24 +113,28 @@ permalink: /research/
       data-paper-id="{{ item.id | escape }}"
       data-search="{{ item.title | escape }} {{ title_history | escape }} {{ item.authors | join: ' ' | escape }} {{ item.year }} {{ item.date | escape }} {{ item.journal | escape }} {{ item.doi | escape }} {{ item.abstract | escape }}"
     >
+      {%- capture publication_title -%}
+        {%- if primary_link and primary_link != '' -%}
+          <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
+        {%- else -%}
+          {{ item.title | escape }}
+        {%- endif -%}
+      {%- endcapture %}
       {% if item.citation and item.citation != '' %}
       <p>{{ item.citation }}</p>
+      {% elsif item.journal %}
+      {% assign author_names = item.authors | join: ', ' %}
+      <p>{{ item.citation_authors | default: author_names | escape }} ({{ item.year }}): "{{ publication_title }}," {{ item.journal | escape }}.</p>
       {% else %}
-      <p>
-        {% if primary_link and primary_link != '' %}
-        <a href="{{ primary_link }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
-        {% else %}
-        {{ item.title | escape }}
-        {% endif %}
-        {% unless item.journal %}
-          {% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}
-        {% endunless %}
-      </p>
+      <p>{{ publication_title }}{% if item.date and item.date != '' %} ({{ item.date }}){% elsif item.year and item.year != '' %} ({{ item.year }}){% endif %}</p>
       {% endif %}
 
-      {% include publication_details.html paper=item %}
+      {% include paper_previous_title.html paper=item %}
 
       <p class="inline-links">
+        {% if item.doi and item.doi != '' %}
+          <a href="https://doi.org/{{ item.doi | escape }}" target="_blank" rel="noopener">DOI {{ item.doi | escape }}</a>
+        {% endif %}
         {% if item.links and item.links.size > 0 %}
           {% for l in item.links %}
             {% if l.url %}
